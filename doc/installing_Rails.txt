@@ -1,0 +1,78 @@
+http://railsapps.github.io/installing-rails.html
+
+Follow the links to install on Ubuntu
+
+I'd advise running sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get dist-upgrade
+before installing curl
+
+when you type in the curl command to install RVM, you will get a message 
+about it not being able to verify the signature, so next follow the command
+to get the key from the server
+
+Now, rerun the curl command and it will install RVM
+
+Using the command provided on the site, it will install the latest stable 
+version of Ruby which right now is 2.2.1.  It also sets up RVM in a PATH
+variable so it's callable inside a terminal.
+
+Note the message when done, you will need to running
+source /home/brg/.rvm/scripts/rvm
+in any open shell windows you have.  Once run, you will be able to use it
+in any new shell/terminal windows you open.
+
+Once run, type in 'irb' in the terminal, you should see something similar
+to this:
+brg@EnSabahNur ~ $ irb
+2.2.1 :001 > 
+
+That is the ruby command line interpreter, like what Python has.  If you see this
+then your installation is working.  Type 'quit' to get back to your command line.
+
+Now follow the commands to update RVM and we're going to get Ruby 2.3.0, so run
+rvm get stable --autolibs=enable
+rvm install ruby-2.3.0
+rvm -default use ruby-2.3.0
+
+Now run 
+ruby -v 
+and you should see that it is using ruby 2.3.0
+
+As the site says, we'll need a javascript runtime, so we'll follow the instructions to 
+get Node.js
+sudo apt-get install nodejs
+
+It says to set it in your $PATH, but if you run
+nodejs -v 
+the command works, so we should be good.  If we run into problems we may need
+to set it.
+
+Ok, now go ahead and run 
+gem update --system
+to update the package manager.  Running
+gem -v
+should show that it's running 2.5.2
+
+Follow the instructions about gemsets, installing Bundler, and Nokogiri
+
+Then, update any outdated gems, it shows how to get the list.  Then run, for example
+gem update power_assert
+or 
+gem update minitest
+
+Ok, now for Rails installation...
+The current version is 4.2.5.1
+So follow the commands it gives to use ruby-2.3.0@rails4.2 to create a project gemsets
+Run the command to install rails
+gem install rails
+Then issue the command 'rails -v'
+It should display that the version we are using is 4.2.5.1
+
+Ok, that's the installation of Rails.  I've created the base program directory,
+and the appropriate gems will be updated as I work on the Rails side.  I'll have
+a cheat sheet for basic commands to star the Rails server, to update installed gems,
+etc.  For the most part, on the Rails side, you'll clone the repository which will
+have the gemfile with all the gems needed for the app.  Basically, right now, don't worry
+about it, I'll create you a cheatsheet that will have what you need.  Right now, you'll 
+just need to get Rails installed on your system.

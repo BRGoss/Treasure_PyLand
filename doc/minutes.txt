@@ -1,0 +1,90 @@
+02/06/16
+Discussed priorities for the first week:
+    Each of us need a github account.
+    Create a Minutes document to store meeting records.
+    Develop a worklog, and use it to keep track or work products
+        when initiated, date, what was worked on, and for how long
+        *This will be moved/copied into Axosoft
+        *Need to see if Dr. Archer can get an Axosoft account
+    Story/concept - Get an idea of the start, middle, and end of the game
+        Get the basics down, so we know what to look for/create as far as
+        images go, etc.  Some of the story can be fleshed out as we go, but
+        we need a good foundation.
+    Develop String Manipulation problems.  Come up with various puzzles to use.
+        These can be modified as work progresses, but need a decent initial set.
+    Create an image tracker document.  This will keep the image name, weblocation we
+        found it, and the search criteria we used to discover it so we can find
+        them again.
+    
+Software Used:
+    We will be using the following software:
+        Linux - this is to be developed to run on a Linux server
+        Python 3.  We'll want to make sure we all have the same version of
+            Python installed on our work systems.
+        Ruby on Rails.  This has now been set as I've created the base project,
+            we are using Ruby 2.3.0 and Rails 4.5.2.1
+        Inkscape - for image creation/manipulation.  Prefer .svg files for graphics
+            can look at GIMP as well
+        Javascript - undecided on at this time, possibly JQuery library for UI
+        Database - may not need one, if we do, SQLite comes installed with Rails
+            using RVM, so unless we need something robust, can stick with this
+        XML/JSON - Possibly use for randomization of puzzles, but first should
+            get the puzzles hardcoded so the game is complete.  Then we can tweak.
+        HTML/HAML - for the base webpage
+        CSS - for design, would like us to use transitions
+            
+Overview:
+    The idea is to create an adventure game inspired by Treasure Island and Indiana 
+        Jones.  Initial documents can be found in the project's doc folder.  The idea
+        is to gamify the learning of string manipulaton in python.  Dr. Archer would
+        like it to be engaging, interactive, and fun.  Things to use would be animations,
+        pictures, sound effects, etc.  For each puzzle/scene of the game/adventure, we 
+        would display a picture as well as a snippet of the story.  The student is then
+        presented with a problem they must solve.  The problem typically would be being
+        provided a string of somesort, that needs to have operations performed upon it to 
+        generate the correct string.  If this is done correctly, they pass on to the next
+        scene of the adventure, and the next puzzle.  At the end, they will get the 
+        treasure, whatever it might be.  
+        
+    Some initial thoughts:
+        Dr. Archer said that we could use pop references, so do we want to incorporate
+        some Monty Python references?  It is Python, after all and it's riddled with 
+        MP references throughout.  As such, for the Indiana Jones part, we could have
+        Montana 'Monty' Jones.  I was also thinking for the Pyrates, we'd have actual
+        snakes with pirate hats on.  And for the role of LJS(whatever the name might
+        end up being) instead of having a peg leg, would instead have a peg tail.  It's
+        a bit goofy, but a few initial thoughts.
+        
+    The puzzles:
+        After we've got a solid deliverable with concrete puzzles, we can look at 
+        randomizing the puzzle elements such as different initial strings, different
+        format of the strings, etc.  However, the algorithm needed to solve the problem
+        cannot fluctuate.  
+        
+    Basic program structure:
+        This will be a Ruby on Rails project for the base website.  On the backend, Ruby 
+        will take the input from the user (the solution) and process it out to a file.  It 
+        will then call python and pass in the file.  The returned string will be compared 
+        to the correct output and determine if it was correct.
+        
+        So, depending on how we decide the game flow/etc should be, we can either make
+        each puzzle a separate web page, or we could make this a single page web app that
+        will use JS on the front end and submit REST calls to the Rails backend for processing
+        and getting the new page/puzzle info.  So the UI for the single page would be set up with
+        some UI frames/divs to display the story text, one for the picture/animation, and another
+        for the puzzle info and the text-box for input.  These would be updated using REST calls.
+        
+    Tech for the puzzles:
+        The puzzles will be run through Python.  The Python code will need to sandbox the
+        submitted code so that it cannot access the filesystem/os and cause havoc.  Dr. Archer
+        can provide code to help us with this, but I'd prefer us trying to do this on our own
+        first.  Commands that we need to block would be open, os, exec, compile, eval.  We'll
+        also need to make sure that the code entered doesn't break the program either.  We'll
+        also need to make sure they don't cheat.  Python lets you naviate the tokens of the code
+        so we could inspect the code to determine if they have used the strings in the correct
+        format as a means to cheat.  The defined function (the solution to the puzzle) should take
+        and input string and return a string.  The python compile function may prove useful.
+        
+        
+        
+        
