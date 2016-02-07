@@ -1,0 +1,3 @@
+BRG: Created initial project, including base rails project, associated installer document with other members.
+     Uploaded to github repository.  Created worklog, and imported provided documents and pictures.  Transcribed
+     minutes.  7am - 9am, 10:30am - 11:30am
