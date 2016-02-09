@@ -1,3 +1,6 @@
-BRG: Created initial project, including base rails project, associated installer document with other members.
-     Uploaded to github repository.  Created worklog, and imported provided documents and pictures.  Transcribed
-     minutes.  7am - 9am, 10:30am - 11:30am
+USER   DATE       WORK
+====   ========   =========
+BRG    02/06/16   Meeting with Abraham and Dr. Archer.  10am - 12pm
+BRG    02/07/16   Created initial project, including base rails project, associated installer document with other members.
+                  Uploaded to github repository.  Created worklog, and imported provided documents and pictures.  Transcribed
+                  minutes.  7am - 9am, 10:30am - 11:30am
