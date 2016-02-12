@@ -1,0 +1,34 @@
+This is to provide an example of what a puzzle submission should look like.
+Save each puzzle as a separate file for initial submission, and with the proper file extension.  This will
+allow whatever IDE Paul may use to identify and display the appropriate file type correctly, and so different
+code is distinguishable.  For example, I want to submit my puzzle1 as a ruby file, so it'd be puzzle1.rb while
+Abraham might want to submit his puzzle1 in java it would be puzzle1.java.  Each person should submit their puzzles 
+in their appropriate folder.  The translated puzzles will be in the Completed folder.
+
+DESCRIPTION:  A detailed description of the problem.
+ALGORITHM:  A detailed description of how to solve the problem.
+EXAMPLE:  Give an example input, and the resulting output after it has been processed by the algorithm.
+SOLUTION:  The code solution.  This does not have to be in Python, but it should be clear so that Paul
+           can accurately translate the code into Python.  
+           
+Example:
+
+DESCRIPTION:  Is a string a palindrome?
+ALGORITHM:  Remove any possible delimiters.
+            Reverse the string and save in another variable.
+            Compare equality of the two strings.
+            If equal, success!
+            Else, not a palindrome.
+EXAMPLE: Input = "race car", Output = "Yes!"
+SOLUTION:  (In a python like pseudocode)
+Def IsPalindrome(string pali)
+    pali.replace(" ", "")
+    pali.replace(",", "")
+    pali.replace(".", "")
+    var reverse = pali.reverse()
+    if (pali == reverse)
+        printf("You're a winner!")
+    else
+        printf("Not a palidrome")
+        
+***Thanks to Abraham for the puzzle idea, I'll let him create the actual non example entry 
