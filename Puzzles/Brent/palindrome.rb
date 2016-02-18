@@ -28,4 +28,4 @@ is_palindrome?("fast")
 is_palindrome?("race car")
 #True
 is_palindrome?("A man, a plan, a canal, Panama")
-#False
+#True
