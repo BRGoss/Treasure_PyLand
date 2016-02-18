@@ -32,3 +32,5 @@ Def IsPalindrome(string pali)
         printf("Not a palidrome")
         
 ***Thanks to Abraham for the puzzle idea, I'll let him create the actual non example entry 
+
+Added for commit test
