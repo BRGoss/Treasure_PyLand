@@ -33,4 +33,4 @@ Def IsPalindrome(string pali)
         
 ***Thanks to Abraham for the puzzle idea, I'll let him create the actual non example entry 
 
-Added for commit test
+Added for commit test, more tests
