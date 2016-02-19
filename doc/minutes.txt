@@ -87,4 +87,36 @@ Overview:
         
         
         
-        
+02/12/16
+
+Went over some of the features of Axosoft.
+Went over GitHub.
+Inquired on who had done what for the prior week:
+    Paul had worked on the string puzzles, went over the Python string library
+    Abraham had reviewed over HTML and Javascript
+
+Targets for the week include:
+    Get the storyboard down, doesn't have to be fully fleshed out, but need to have a good idea where we want to go with it.
+    Need explicit puzzle definitions with solutions
+        20 lines of code is probably too much
+
+Next meeting is set for Saturday 8am
+
+Items discussed
+    When a student submits their function, do we want to show them what the answer should have been?  Do we want to give hints?  We need to show what their output generated so they can have an idea of what they might have done wrong.  
+
+    We will probably need a feedback pane then.  How to implement will be decided at a point in the future.
+
+    Puzzles should have some flexiblitiy so they're not all tied to a particular scene.
+
+Some ideas that I had in regards to the admin portion --Brent:
+    I can use Rails to create scaffolds for the following for eacy input into a db.  
+
+    - Puzzles: This would contain the puzzle question and a difficulty ranking.
+    - Strings/Inputs:  This would contain the input strings and output strings/solutions.  It would have the Puzzle id for each string/solution entry so that we can pull in random strings for the puzzles.
+    - Scenes: This would be for inputting in scenes, the script and the javascript for the animation/picture/whatever, or at least links to where they are in the app.  
+    - Story_Flow:  This would be the db that would hold the order of the scenes, and which puzzles are attached to each scene.  This of course can be updated to add or remove scenes, change the puzzles around, etc.
+
+    They don't have to be fully fleshed out or look good, if we have time we can do that later.  It's just a means for us to easily input in the data we need for the game, rather than making sure that the json or xml is correct, etc.  It also allows for easy manipulation of the various elements for editing, adding, etc.  Most of these can be created wth a single line command, and a sligh tweak to CSS to allow the input boxes to be large enough to hold a lot of text visibly.  The Strings/Inputs would require a slight modification to add in the Puzzle id number.  The Story Flow would be the most complex, but shouldn't be too hard.  T
+
+    Again, just an idea on how we can get a quick and dirty means to input the game info that can be fully fleshed out after we get the main game features done.        
