@@ -1,0 +1,14 @@
+DESCRIPTION: This function replaces a character in a string with something else
+ALGORITHM: Should be able to use string methods in Python to accomplish similar, look
+            for function/method for String replace
+
+NOTE:  May want to decide if should replace capital letters as well
+
+Example: string to replace = 'a' string to replace with = 'bc'
+         Input = 'abcdefg' Output = 'bcbcdefg'
+
+def replace(words):
+	rep = words.replace('a', 'bc')
+#       rep = rep.replace('A','bc') to replace upper case
+	print rep
+	return

@@ -1,0 +1,33 @@
+POTENTIAL INTERVIEW QUESTION
+
+DESCRIPTION:  Check if a string's character are in the 
+              same order in another string
+ALGORITHM:    Iterate over the big string, checking for
+              the letter you are currently on in the 
+              sample string. When you find a match,
+              increment index for the sample string.
+              Iterate over the long string until you
+              find a matching character for all the 
+              characters in the sample string, or 
+              until you run out of characters to 
+              check in the long string.
+Example: Input = 'A long long time ago this was a better time, at least for me' 
+         Output = 'A long long time ago this was'
+
+def same_order(s):
+	isTrue=0
+	compString='NAGARRO'
+	i=0
+	j=0
+	while (isTrue==0 and i<len(s)):
+		if(compString[j]==s[i]):
+			j+=1
+		if(j==len(compString)):
+			isTrue=1
+		i+=1
+	if(isTrue==1):
+		print 'True'
+	else:
+		print 'False'
+	return
+
