@@ -1,0 +1,47 @@
+This is a cheat sheet for beginning to use Git.  As the project progresses, the way we use, and the way we'll each need to manage Git will increase in complexity.  Right now, we each have designated folders in which our work will be done.  As such, we should not cause any merge conflicts at this time.  After a couple of weeks, when we start integrating the web design into the appropriate folders in the Rails app, we'll start creating branches, and also start using a feature that let's us communicate with our project on axosoft.
+
+This should be our standard workflow when we sit down to code.  Follow these steps, please, as it will allow more up to date monitoring of our progress in our weekly sprints.
+
+1.  Open axosoft, and find the item that you're going to be working on.  Choose only one item at a time.  
+
+2.  Issue the following command inside your working directory.
+	git pull
+	This will pull down any changes that the other team members may have pushed to github since the last time you worked on the project.
+
+3.  Work on what you need to for the item you picked out from axosoft.  Periodically 
+	as you work, you may wish to save your changes and make a commit in git.  If that's the case, follow the steps below like you've finished your work session, then just come back to this step.
+
+4.  When you are done with the item, or if you are done working for the time biiiiieing, 
+	then we will consider your work session done.  Save your work.  Then issue the following command inside the root of the project directory.
+	git add .
+	This will add all changed files to your git staging area.
+
+5.  Issue the command
+	git stash
+	This will save what you've just added to the stash...this is a safe area on your 
+	computer that will allow us to do the next step with minimal issues.
+
+6.  Issue the following command
+	git pull
+	This will pull any changes that may have been uploaded to github since your last 
+	pull command.
+
+7.	Issue the command
+	git stash pop
+	This brings in your changes that we saved to the stash, and applies them on top
+	of any changes that you may have just pulled from github.
+
+8.  Issue the following command
+	git commit -m "Your message here"
+	Put in a small message that describes your changes for this commit.  Something like "Added feature x, modified file y"
+
+9.  Issue the following command
+	git push origin master
+	That's the last git command for this session if you're done.  If you're going to continue coding, proceed back up to step 3.  If you finished the work item that 
+	you were working on, proceed to step 10
+
+10.	Log into axosoft, and add your time worked to the item that you worked on.  If
+	you wish to continue working, pick out the next item that you will work on, nad 
+	proceed back to step 3.
+
+That's a lot of words, but after the first two or three work sessions, you may only need the git commands off this.  It seems like a lot, but I want us to get used to working on one item at a time.  This will allow us in a couple of weeks to issue through our git commit message a coded string that will update the work item in axosofe with our hours worked, so we won't have to log into axosoft as long as we know the work item id that we're working on.  That will be our next step with using git in a couple fo weeks.
