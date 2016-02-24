@@ -1,5 +1,7 @@
 class ScenesController < ApplicationController
 
+	before_action :set_scene, only: [:show, :edit, :update, :destroy]
+
 	def index
 		@scenes = Scene.all 
 	end
@@ -21,15 +23,15 @@ class ScenesController < ApplicationController
 	end
 
 	def show
-		@scene = Scene.find(params[:id])
+		
 	end
 
 	def edit
-		@scene = Scene.find(params[:id])
+		
 	end
 
 	def update
-		@scene = Scene.find(params[:id])
+		
 		if @scene.update(scene_params)
 			flash[:notice] = "Scene has been updated."
 			redirect_to @scene
@@ -40,11 +42,26 @@ class ScenesController < ApplicationController
 
 	end
 
+	def destroy
+		
+		@scene.destroy
+
+		flash[:notice] = "Scene has been deleted."
+		redirect_to scenes_path
+	end
+
 
 	private
 
 	def scene_params
 		params.require(:scene).permit(:title, :description, :visual)
+	end
+
+	def set_scene
+		@scene = Scene.find(params[:id])
+		rescue ActiveRecord::RecordNotFound
+		flash[:alert] = "The scene you were looking for could not be found."
+		redirect_to scenes_path
 	end
 
 end
