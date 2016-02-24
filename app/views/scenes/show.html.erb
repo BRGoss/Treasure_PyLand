@@ -1,4 +1,5 @@
 <% title(@scene.title, "Scenes") %>
 <h1><%= @scene.title %></h1>
+<%= link_to "Edit Scene", edit_scene_path(@scene) %>
 <p><%= @scene.description %></p>
 <p><%= @scene.visual %></p>
