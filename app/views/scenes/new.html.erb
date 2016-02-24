@@ -1,0 +1,19 @@
+<h1>New Scene</h1>
+<%= form_for(@scene) do |f| %>
+	<p>
+		<%= f.label :title %><br>
+		<%= f.text_field :title %>
+	</p>
+
+	<p>
+		<%= f.label :description %><br>
+		<%= f.text_field :description %>
+	</p>
+
+	<p>
+		<%= f.label :visual %><br>
+		<%= f.text_field :visual %>
+	</p>
+
+	<%= f.submit %>
+<% end %>

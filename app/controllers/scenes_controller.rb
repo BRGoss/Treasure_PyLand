@@ -1,0 +1,31 @@
+class ScenesController < ApplicationController
+
+	def index
+	end
+
+	def new
+		@scene = Scene.new
+	end
+
+	def create
+		@scene = Scene.new(scene_params)
+
+		if @scene.save
+			flash[:notice] = "Scene has been created."
+			redirect_to @scene
+		else
+			#nothing yet
+		end
+	end
+
+	def show
+		@scene = Scene.find(params[:id])
+	end
+
+	private
+
+	def scene_params
+		params.require(:scene).permit(:title, :description, :visual)
+	end
+
+end
