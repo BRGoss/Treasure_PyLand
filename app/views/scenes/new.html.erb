@@ -1,3 +1,16 @@
+<% if @scene.errors.any? %>
+	<div id = "error_explanation">
+		<h2><%= pluralize(@scene.errors.count, "error") %>
+		prohibited this scene from being saved:</h2>
+
+		<ul>
+			<% @scene.errors.full_messages.each do |msg| %>
+				<li><%= msg %></li>
+			<% end %>
+		</ul>
+	</div>
+<% end %>
+
 <h1>New Scene</h1>
 <%= form_for(@scene) do |f| %>
 	<p>

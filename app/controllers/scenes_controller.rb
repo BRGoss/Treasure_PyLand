@@ -14,7 +14,8 @@ class ScenesController < ApplicationController
 			flash[:notice] = "Scene has been created."
 			redirect_to @scene
 		else
-			#nothing yet
+			flash.now[:alert] = "Scene has not been created."
+			render "new"
 		end
 	end
 
