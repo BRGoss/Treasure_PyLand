@@ -1,1 +1,11 @@
+<h1>Scenes</h1>
+
 <%= link_to "New Scene", new_scene_path %>
+
+<div id="scenes">
+	<% @scenes.each do |scene| %>
+		<h2><%= link_to scene.title, scene %></h2>
+		<p><%= scene.description %></p>
+		<p><%= scene.visual %></p>
+	<% end %>
+</div>
