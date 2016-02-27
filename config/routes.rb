@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   # root 'welcome#index'
   root "scenes#index"
   resources :scenes
+  resources :puzzles
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
