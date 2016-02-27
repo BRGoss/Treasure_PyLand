@@ -41,6 +41,14 @@ class PuzzlesController < ApplicationController
 		end
 	end
 
+	def destroy
+		@puzzle = Puzzle.find(params[:id])
+		@puzzle.destroy
+
+		flash[:notice] = "Puzzle has been deleted."
+		redirect_to puzzles_path
+	end
+
 	private
 
 	def puzzle_params
