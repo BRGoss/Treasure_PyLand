@@ -14,7 +14,8 @@ class PuzzlesController < ApplicationController
 			flash[:notice] = "Puzzle has been created."
 			redirect_to @puzzle
 		else
-			#nothing yet
+			flash.now[:alert] = "Puzzle has not been created."
+			render "new"
 		end
 	end
 
