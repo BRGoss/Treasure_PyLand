@@ -13,5 +13,11 @@ RSpec.feature "Users can create new puzzles" do
 		click_button "Create Puzzle"
 
 		expect(page).to have_content "Puzzle has been created."
+
+		puzzle  = Puzzle.find_by(name: "Reverse String")
+		expect(page.current_url).to eq puzzle_url(puzzle)
+
+		title = "Reverse String - Puzzles"
+		expect(page).to have_title title
 	end
 end
