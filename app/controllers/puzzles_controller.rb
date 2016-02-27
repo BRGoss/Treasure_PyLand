@@ -1,4 +1,5 @@
 class PuzzlesController < ApplicationController
+	before_action :set_puzzle, only: [:show, :edit, :update, :destroy]
 
 	def index
 		@puzzles = Puzzle.all 
@@ -21,15 +22,15 @@ class PuzzlesController < ApplicationController
 	end
 
 	def show
-		@puzzle = Puzzle.find(params[:id])
+		
 	end
 
 	def edit
-		@puzzle = Puzzle.find(params[:id])
+		
 	end
 
 	def update
-		@puzzle = Puzzle.find(params[:id])
+		
 		@puzzle.update(puzzle_params)
 
 		if @puzzle.update(puzzle_params)
@@ -42,7 +43,7 @@ class PuzzlesController < ApplicationController
 	end
 
 	def destroy
-		@puzzle = Puzzle.find(params[:id])
+		
 		@puzzle.destroy
 
 		flash[:notice] = "Puzzle has been deleted."
@@ -53,5 +54,12 @@ class PuzzlesController < ApplicationController
 
 	def puzzle_params
 		params.require(:puzzle).permit(:name, :description, :contract, :solution)
+	end
+
+	def set_puzzle
+		@puzzle = Puzzle.find(params[:id])
+		rescue ActiveRecord::RecordNotFound
+		flash[:alert] = "The puzzle you were looking for could not be found."
+		redirect_to puzzles_path
 	end
 end
