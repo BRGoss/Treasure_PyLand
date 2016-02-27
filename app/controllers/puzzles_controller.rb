@@ -24,6 +24,23 @@ class PuzzlesController < ApplicationController
 		@puzzle = Puzzle.find(params[:id])
 	end
 
+	def edit
+		@puzzle = Puzzle.find(params[:id])
+	end
+
+	def update
+		@puzzle = Puzzle.find(params[:id])
+		@puzzle.update(puzzle_params)
+
+		if @puzzle.update(puzzle_params)
+			flash[:notice] = "Puzzle has been updated."
+			redirect_to @puzzle
+		else
+			flash.now[:alert] = "Puzzle has not been updated."
+			render "edit"
+		end
+	end
+
 	private
 
 	def puzzle_params

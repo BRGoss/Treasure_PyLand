@@ -1,5 +1,6 @@
 <% title(@puzzle.name, "Puzzles") %>
 <h1><%= @puzzle.name %></h1>
+<%= link_to "Edit Puzzle", edit_puzzle_path(@puzzle) %>
 <p><%= @puzzle.description %></p>
 <p><%= @puzzle.contract %></p>
 <p><%= @puzzle.solution %></p>
