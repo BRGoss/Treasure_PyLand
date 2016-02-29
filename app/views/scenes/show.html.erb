@@ -1,10 +1,17 @@
 <% title(@scene.title, "Scenes") %>
-<h1><%= @scene.title %></h1>
-<%= link_to "Edit Scene", edit_scene_path(@scene) %>
-<%= link_to "Delete Scene", 
-	scene_path(@scene),
-	method: :delete,
-	data: { confirm: "Are you sure you want to delete this scene?" }
-%>
+<header>
+	<h1><%= @scene.title %></h1>
+
+	<ul class="actions">
+		<li><%= link_to "Edit Scene", edit_scene_path(@scene), class: "edit" %></li>
+		<li><%= link_to "Delete Scene", 
+			scene_path(@scene),
+			method: :delete,
+			data: { confirm: "Are you sure you want to delete this scene?" },
+			class: "delete"
+		%></li>
+	</ul>
+</header>
+
 <p><%= @scene.description %></p>
 <p><%= @scene.visual %></p>

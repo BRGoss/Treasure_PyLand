@@ -2,9 +2,9 @@ class CreatePuzzles < ActiveRecord::Migration
   def change
     create_table :puzzles do |t|
       t.string :name
-      t.string :description
-      t.string :contract
-      t.string :solution
+      t.column :description, :text
+      t.column :contract, :text
+      t.column :solution, :text
 
       t.timestamps null: false
     end

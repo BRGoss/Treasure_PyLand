@@ -1,6 +1,9 @@
-<h1>Puzzles</h1>
-
-<%= link_to "New Puzzle", new_puzzle_path %>
+<header>
+	<h1>Puzzles</h1>
+	<ul class="actions">
+		<li><%= link_to "New Puzzle", new_puzzle_path, class: "new" %></li>
+	</ul>
+</header>
 
 <div id="puzzles">
 	<% @puzzles.each do |puzzle| %>

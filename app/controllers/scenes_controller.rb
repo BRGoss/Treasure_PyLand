@@ -54,7 +54,7 @@ class ScenesController < ApplicationController
 	private
 
 	def scene_params
-		params.require(:scene).permit(:title, :description, :visual)
+		params.require(:scene).permit(:title, :description, :transcript, :visual)
 	end
 
 	def set_scene

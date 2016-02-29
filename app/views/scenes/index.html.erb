@@ -1,6 +1,9 @@
-<h1>Scenes</h1>
-
-<%= link_to "New Scene", new_scene_path %>
+<header>
+	<h1>Scenes</h1>
+	<ul class="actions">
+		<li><%= link_to "New Scene", new_scene_path, class: "new" %></li>
+	</ul>
+</header>
 
 <div id="scenes">
 	<% @scenes.each do |scene| %>
