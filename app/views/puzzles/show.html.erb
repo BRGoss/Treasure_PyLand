@@ -25,3 +25,11 @@
 			class: "new" %></li>
 	</ul>
 </header>
+
+<ul id="parameters">
+<% @puzzle.parameters.each do |parameter| %>
+	<li>
+		<%= link_to parameter.input, [@puzzle, parameter] %>
+	</li>
+<% end %>
+</ul>
