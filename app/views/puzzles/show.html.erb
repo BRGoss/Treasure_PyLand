@@ -16,3 +16,12 @@
 <p><%= @puzzle.description %></p>
 <p><%= @puzzle.contract %></p>
 <p><%= @puzzle.solution %></p>
+
+<header>
+	<h2>Parameters</h2>
+
+	<ul class="actions">
+		<li><%= link_to "New Parameter", new_puzzle_parameter_path(@puzzle),
+			class: "new" %></li>
+	</ul>
+</header>
