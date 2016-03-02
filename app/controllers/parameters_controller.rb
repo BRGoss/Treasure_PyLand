@@ -22,6 +22,21 @@ class ParametersController < ApplicationController
 
 	end
 
+	def edit
+
+	end
+
+	def update
+		if @parameter.update(parameter_params)
+			flash[:notice] = "Parameter has been updated."
+			redirect_to [@puzzle, @parameter]
+		else
+			flash.now[:alert] = "Parameter has not been updated."
+			render "edit"
+		end
+	end
+
+
 	private
 
 	def set_puzzle
