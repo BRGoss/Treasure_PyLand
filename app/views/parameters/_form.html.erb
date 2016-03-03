@@ -1,0 +1,6 @@
+<%= simple_form_for([puzzle, parameter]) do |f| %>
+	<%= f.input :input %>
+	<%= f.input :output %>
+
+	<%= f.button :submit, class: "btn-primary" %>
+<% end %>

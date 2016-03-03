@@ -1,0 +1,16 @@
+<div id="parameter">
+	<header>
+		<h1><$= @puzzle.name %></h1>
+	</header>
+
+	<header>
+		<h2><%= @parameter.input %></h2>
+
+		<ul class="actions">
+			<li><%= link_to "Edit Parameter", [:edit, @puzzle, @parameter],
+				class: "edit" %></li>
+		</ul>
+	</header>
+
+	<%= simple_format(@parameter.output) %>
+</div>

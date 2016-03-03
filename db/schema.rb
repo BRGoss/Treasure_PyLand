@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160229130249) do
+ActiveRecord::Schema.define(version: 20160302121449) do
+
+  create_table "parameters", force: :cascade do |t|
+    t.string   "input"
+    t.string   "output"
+    t.integer  "puzzle_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "parameters", ["puzzle_id"], name: "index_parameters_on_puzzle_id"
 
   create_table "puzzles", force: :cascade do |t|
     t.string   "name"
