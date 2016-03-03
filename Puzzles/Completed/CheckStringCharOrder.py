@@ -13,13 +13,12 @@
 #Example: Input 1 = 'NAGARRO' Input 2 = 'NSDAFRGTHAGYREWRNH0'
 #          Output = 'True'
 
-def same_order(s):
+def same_order(lookingFor,s):
 	isTrue='False'
-	compString='NAGARRO'
 	i=0
 	j=0
 	while (isTrue==0 and i<len(s)):
-		if(compString[j]==s[i]):
+		if(lookingFor[j]==s[i]):
 			j+=1
 		if(j==len(compString)):
 			isTrue='True'

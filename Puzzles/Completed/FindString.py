@@ -1,14 +1,15 @@
 #DESCRIPTION:  Find treasure in string
-#ALGORITHM:    Find the substring 'treasure' in
-#              the provided string. Store the
-#              lowest index in a variable, then
-#              print the substring
+#CONTRACT:     Define a function called find that takes
+#              two inputs. The first input is the string
+#              that the function will look in. The second
+#              input will be the string that the function
+#              is looking for. The output should be the
+#              substring in the first input that is the
+#              the second input.
 #EXAMPLE: Input = 'abctreasuredef' Output = 'treasure'
 #SOLUTION:  
-def findTreasure(s):
-        toFind='treasure'
-	index=string.find(s,toFind)
-	print s[index:index+len(toFind)]
-	return
+def find(toLookIn,toFind):
+	index=string.find(toLookIn,toFind)
+	return toLookIn[index:index+len(toFind)]
         
 
