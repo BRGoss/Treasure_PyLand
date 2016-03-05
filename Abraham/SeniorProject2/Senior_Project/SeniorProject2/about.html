@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>PyGame</title>
+
+<link rel="stylesheet" type="text/css" href="style.css" />
+<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+</head>
+
+<script>
+ $(document).ready(function() {
+
+        $("#about").click(function () {
+            if ($('#aboutdiv').is(":hidden")) {
+                $("#aboutdiv").slideDown('slow');
+            } else {
+                $('#aboutdiv').slideUp('slow');
+
+            }
+        });
+});
+
+</script>
+
+<div id="aboutdiv" class="about">
+The team needs to develop the main story board for the Treasure PyLand project.  The storyboards will help us determine what images/sounds/other items we want to include in game.  It also allows us to have a good foundation on what the backend and webpage need to be able to deliver.  While the exact story/script need not be complete, we need the initial number of scenes (that may be expanded upon if time permits) that will ship with the initial release o the game. 
+</div>
+
+<div class="fullwidth">
+<header class="mainheader">
+     <nav>
+       <ul> 
+          <li class="hactive"><a href="index.html">Home</a></li>
+          <li class="iactive"><a href="instruction.html">instruction</a></li>
+          <li class="gactive"><a href="game.html">game</a></li>
+           <li id="about" class="aactive"><a href="about.html">about</a></li>
+          <li class="cactive"><a href="contact.html">contact</a></li>
+       </ul>
+     </nav>
+           <form class="search">
+               <input type="text" placeholder="search..." />
+          </form>
+</header>
+</div>
+
+<body>
+    <div class="body">
+    
+
+        <footer>
+        </footer>
+
+
+    </div>
+
+
+</body>
+</html>

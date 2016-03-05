@@ -1,0 +1,184 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>PyGame</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="javascript.js"></script>
+<script type="text/javascript" src="puzzle.js"></script>
+ 
+ 
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<!--
+<script> 
+$(document).ready(function(){
+    $("#flip").click(function(){
+        $("#panel").slideDown(5000);
+    });
+    $("#stop").click(function(){
+        $("#panel").stop();
+    });
+
+
+$("#flip").click(function(){
+        $("#pane2").slideDown(5000);
+    });
+    $("#stop").click(function(){
+        $("#pane2").stop();
+    });
+
+$("#flip").click(function(){
+        $("#pane3").slideDown(5000);
+    });
+    $("#stop").click(function(){
+        $("#pane3").stop();
+    });
+
+$("#flip").click(function(){
+        $("#pane4").slideDown(5000);
+    });
+    $("#stop").click(function(){
+        $("#pane4").stop();
+    });
+
+$("#flip").click(function(){
+        $("#pane5").slideDown(5000);
+    });
+    $("#stop").click(function(){
+        $("#pane5").stop();
+    });
+});
+
+</script>
+
+-->
+</head>
+
+
+<div id="aboutdiv" class="about">
+The team needs to develop the main story board for the Treasure PyLand project.  The storyboards will help us determine what images/sounds/other items we want to include in game.  It also allows us to have a good foundation on what the backend and webpage need to be able to deliver.  While the exact story/script need not be complete, we need the initial number of scenes (that may be expanded upon if time permits) that will ship with the initial release o the game. 
+</div>
+
+<div id="contactdiv" class="about">
+     <form>
+     <div class="l">
+        <input type="text" placeholder="Name"/>
+        <input type="text" placeholder="Mobile Number"/>
+        <input type="text" placeholder="Email"/>
+        <a class="submition" href="#">Submit</a>
+        
+      </div>
+      
+       <div class="l">
+            <textarea>Your Message</textarea>
+       </div>
+    </form>
+</div>
+
+<div id="instructiondiv" class="about">
+       The team needs to develop the main story board for the Treasure PyLand project.  The storyboards will help us determine what images/sounds/other items we want to include in game.  It also allows us to have a good foundation on what the backend and webpage need to be able to deliver.  While the exact story/script need not be complete, we need the initial number of scenes (that may be expanded upon if time permits) that will ship with the initial release o the game.
+</div>
+
+
+
+
+
+<div class="fullwidth">
+
+<header class="mainheader">
+     <nav>
+       <ul> 
+          <li class="gactive"><a href="game.html">Game</a></li>
+          <li id="instruction" class="iactive"><a href="#">Instruction</a></li>
+           <li id="about" class="aactive"><a href="#">About</a></li>
+          <li id="contact" class="cactive"><a href="#">Contact</a></li>
+       </ul>
+        <form class="search">
+               <input type="text" placeholder="search..." />
+          </form>
+     </nav>
+          
+</header>
+</div>
+
+<body>
+<div class="in_common" id="container">
+      
+      
+   <div class="in_common" id="content1">
+        
+    <!-- <button id="stop">Stop sliding</button>  -->
+     <a href="#" ><div id="flip">Click to slide down script panel</div></a>
+     <a href="#" ><div id="panel">Script1 goes here!</div></a>
+      <a href="#" ><div id="pane2">Script2 goes here!</div></a>
+     <a href="#" ><div id="pane3">Script3 goes here!</div></a>
+     <a href="#" ><div id="pane4">Script4 goes here!</div></a>
+     <a href="#" ><div id="pane5">Script4 goes here!</div></a>
+   </div>
+        
+        
+  <div class="in_common" id="content2">
+     <img src="distantIsland.JPG" alt="Mountain View" style="width:480px;height:580px;"> 
+
+  </div>
+  
+  
+   <div class="in_common" id="content3">
+
+        <FORM  ACTION="#" NAME=puzzle>
+         <SELECT NAME="words" ONCHANGE="alert(document.puzzle.words.value)">
+             <OPTION VALUE="- Select a Puzzle -">- Select a Puzzle -</OPTION>
+             <OPTION VALUE="IT IS ALWAYS GOOD TO WIN">question1</OPTION>
+             <OPTION VALUE="IT IS ALWAYS GOOD TO WIN">question2</OPTION>
+             <OPTION VALUE="IT IS ALWAYS GOOD TO WIN">question3</OPTION>
+             <OPTION VALUE="IT IS ALWAYS GOOD TO WIN">question4</OPTION>
+             <OPTION VALUE="IT IS ALWAYS GOOD TO WIN">question5</OPTION>
+        </SELECT>
+      </FORM>
+     
+     
+     
+ 
+      <h1 align="center">Enter Your Answer Below</h1>
+      <form action = "" >
+       <fieldset>
+         <textarea cols="60" rows="8" class="theform" type = "text" id = "txtName"> </textarea>
+         
+        <input class="buttonsize" type = "button" value = "click me" onclick = "displayAnswer()"/></br>
+             
+        
+       </fieldset>
+      </form>
+  </div>
+    
+    
+    
+    
+</div>
+
+<!--
+<div id="contactdiv" class="about">
+     <form>
+     <div class="l">
+        <input type="text" placeholder="Name"/>
+        <input type="text" placeholder="Mobile Number"/>
+        <input type="text" placeholder="Email"/>
+        <a class="submition" href="#">Submit</a>
+        
+      </div>
+      
+       <div class="l">
+            <textarea>Your Message</textarea>
+       </div>
+    </form>
+</div>
+-->
+    
+    
+</body>
+</html>
