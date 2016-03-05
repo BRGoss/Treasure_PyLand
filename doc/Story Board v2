@@ -42,8 +42,134 @@ Scene 3:
 	was this, where could this map lead, and does anyone even have a floppy drive
 	on their computers anymore?  Looking at the letters, you notice one says "In 
 	case of my untimely demise, seek out ..."  Hmm, it's a bunch of numbers.  It must
-	be some kind of code!  You feel a tap on your shoulder.  As you turn around, the monkey holds out two items, a keyboard, and the mallet.  Maybe he's not so 
+	be some kind of code!  You feel a tap on your shoulder.  As you turn around, the 
+	monkey holds out two items, a keyboard, and the mallet.  Maybe he's not so 
 	stupid!  You grab your keyboard and get to work trying to crack this code....
 
 Scene 4:
-	Montana Jones?  Who is Montana Jones?  And wasn't the dog's name Montana?
+	Upon arriviing at the university, a secretary is nice enough to show you to
+	Monty's office.  He's not in, but she tells you he should be finished with
+	his class soon, and that you can wait inside.  You seat yourself, and looking
+	around he can tell that Monty is quite eccentric.  He has a stuff rabbit
+	with fangs, a case that reads "Holy Hand Grenade", a picture of himself followed
+	by the words "... and the Meaning of Life", and what seems to be a dead parrot.
+
+	"And now for something completely different! Some monkey is in my office, and
+	he's brought his chimp with him!"  Monty seems to have snuck up on you, and is
+	not pleased to find you in his office it seems.  Afraid he may kick you out, you
+	rather rapidly tell him what brought you to his office.
+
+	"A map you say?  From a chest?  With floppy disks?  The former two interest me
+	 but that last one sounds like a personal problem!  May I see the map?"  You 
+	 lay the map on his desk, and he leans forward to examine it more closely.  
+	 "You were right to bring this to me, though I'm unsure who would have left
+	 that note, but I am perhaps the most reknowned programmer of Python the 
+	 world has ever seen!"  
+
+	 He sits a few more minutes in silence studying the map.  Looking up, he seems
+	 somewhat perpelexed.  "Well, this is rather embarrassing, but I don't have a 
+	 clue other than I can tell we'll need a boat.  A boat of which you'll need to
+	 provide, provided of course that you can figure out this bit here..." as he
+	 points to an area on the map that seems to be possibly gibberish.  "If you
+	 can solve this bit, then we may have quite the adventure ahead of us!  But 
+	 first things first, solve this, and then get us a boat!"
+	 
+Scene 5:
+	Arriving at the docks, you begin your search for a ship to take you on your
+	voyage.  Unfortunately none of the ships that are for hire suit your needs,
+	or the crews just plain scare you off.  How did that Gilligan fellow even
+	become a first mate being that much of a clutz, and was that a patched
+	hold in their ship?  And the Love Boat?  That's NOT what you need for this
+	trip, but maybe for Spring Break.  
+
+	After a long day of unsuccessful searching, you find yourself in a small,
+	smoke-filled restaurant.  Upon sitting at a small table to the side, the
+	owner comes over to your table.  "Let me introduce myself to ye mate, I 
+	be Long John Slither.  I hear ye be looking for a ship.  I've got an old
+	ship that should suit ye, and I can even find a crew for it if ye be 
+	interested.  Ye'd even be getting me as your chef, and not a finer fish
+	fryer will ye find on these docks if I do say so myself!  And best still
+	if ye can help me out with a small problem I be having here, you'll have your
+	ship free of charge!"
+
+	Description:  For the animation, thinking we'd have several pictures that 
+	would make a slideshow - one of the ship from Gilligan's Island with crew,
+	one of the Love Boat with crew, one of the Titanic split in half and sinking
+	, and one of the Next Generation bridge with crew.  Each will have a large
+	red X marked over it, then moved off to pane to reveal the next image.  After
+	the ships are done, we'd have a picture of LJS, a snake with a wooden spoon for
+	a tail - Long John Silver had a peg leg, thus the wooden tail part, and he was
+	a cook, so make the peg leg into a wooden spoon tail of sorts.
+
+Scene 6:
+	A few days later you and your crew have set sail and are now out on the open sea.
+	"Who hired that snake for a cook?"  Monty's rhetorical question heralds his
+	arrival at the door to your quarters.  Letting him in, he continues "Do you know
+	what that reptile cooked for lunch?  His own shedding and he has the nerve to 
+	call it stew!  What's for dinner, roach chili?  We best find this island of 
+	yours soon before we die from starvation or food poisoning!"  
+
+	As you both sit down at the nearby table, you bring a lamp closer to better
+	illuminate the map laying across it.  "Well, we've followed the easy clues
+	on the map, but looks like the last one is a bit tricky.  You'd best break
+	out that laptop of yours and get to work!"  
+
+Scene 7:
+	"Land!  Thank God and his son Brian! Hopefully there's food here that's 
+	not snake swill or rat meat!" As Monty is about to leap over the edge of 
+	the boat to run to find something edible on the island, he's met with a 
+	sword at his throat!
+
+	"What do ye mean calling me cooking swill?  And rats be my delicacy! If 
+	me and me mates weren't about to turn on ye anyway, that insult would have
+	sealed your fate!"  Pyrates!  Long John Slither and his crew are pyrates!
+
+	"Take 'em below deck and lock 'em in the hold!  We may have need of 'em later!"
+	One of his crew takes the map from you as they lead you, Monty, and the chimp
+	down to the hold and lock you inside.  
+
+	"Well this is a fine mess you've gotten us into!  How do you expect to get us
+	out of here without getting us killed?"  Monty is right, you've got to get out
+	somehow!  Looking around the hold, you search for something.  Well, the chimp found a crate of bananas, and it looks like Monty's empty stomach is 
+	provoking him to fight the monkey for those bananas.  This could get ugly fast!
+	You examine the locked door a bit closer, and it seems there's a puzzle of sorts
+	that might hold the key to unlocking it.  Time to see if you can crack it!
+
+	Description:  LJS now has a blade on his tail rather than the wooden spoon.
+
+Scene 8:
+	If a group of pyrates wasn't easy enough to follow in the sand, the slither
+	trail of their leader is.  
+
+	*** This is still up in the air.  It depends on what we find/can do with
+	animation to determine what the trap is that is sprung on the pyrates.
+
+Scene 9:
+	"... and that's for cooking my hat!"  Seemingly satisified with the pyrates'
+	fate, Monty catches up to you.  Luckily enough, it seems Slither and his crew
+	made some notes on the map that have assisted you in finding something quite 
+	odd.
+
+	You find yourselves standing in a cave with a skeleton, a bunch of electric
+	cables, and an old power generator.  You try the generator, and it seems to still have some power left in it.  A whirring of unseen machines begins to 
+	reverberate throughthe cave, however, you don't see any kind of useable device
+	aside from the generator as the cables disappear into the walls.  Upon closer inspection, you find a floppy disk drive inside the skeleton's mouth.  "Well
+	it's a good thing you brought those with you from several scenes back isn't it?" Monty is right, it is a good thing you kept those!  Inserting one into the 
+	skeleton's maw, you hear a sound, and can make out a very faint glow from one
+	of the walls.  As you sweep your hand across the wall, you find a monitor that
+	was inbedded there all along, just covered in inches of dust.  On the monitor
+	is what is hopefully the last puzzle of this trip
+
+Scene 10:
+	A door slides open, revealing a second chamber.  This one however is home to a
+	very large, gold plated chest in the center of the room.  "Well it's about
+	bloody time!  Now as long as this doesn't melt our faces when we open it, I 
+	think we can call this a rather excellent adventure!"  Hopefully this isn't 
+	the Ark, but just in case, it might be best to be careful!  Aside the chest,
+	the room is rather unremarkable.  No gold, no coins, no gems, nothing that
+	would indicate any vast wealth except for what may lie in the chest.  
+	Examining the chest...another puzzle!  What could it mean?  
+
+Completion:
+	Not sure what is in the chest, we have a few ideas, but we're going to see
+	what we can find image wise, and what we can do with it or make our own.  
