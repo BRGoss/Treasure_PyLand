@@ -1,6 +1,6 @@
 <div id="parameter">
 	<header>
-		<h1><$= @puzzle.name %></h1>
+		<h1><%= @puzzle.name %></h1>
 	</header>
 
 	<header>
@@ -9,6 +9,9 @@
 		<ul class="actions">
 			<li><%= link_to "Edit Parameter", [:edit, @puzzle, @parameter],
 				class: "edit" %></li>
+			<li><%= link_to "Delete Parameter", [@puzzle, @parameter], method: :delete,
+				data: { confirm: "Are you sure you want to delete this parameter?" },
+				class: "delete" %></li>
 		</ul>
 	</header>
 

@@ -36,6 +36,13 @@ class ParametersController < ApplicationController
 		end
 	end
 
+	def destroy
+		@parameter.destroy
+		flash[:notice] = "Parameter has been deleted."
+
+		redirect_to @puzzle
+	end
+
 
 	private
 
