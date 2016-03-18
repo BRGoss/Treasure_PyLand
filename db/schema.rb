@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160318042424) do
+ActiveRecord::Schema.define(version: 20160318093211) do
+
+  create_table "frames", force: :cascade do |t|
+    t.integer  "storyboard_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.integer  "frame_order"
+  end
+
+  add_index "frames", ["storyboard_id"], name: "index_frames_on_storyboard_id"
 
   create_table "parameters", force: :cascade do |t|
     t.string   "input"
@@ -30,7 +39,10 @@ ActiveRecord::Schema.define(version: 20160318042424) do
     t.text     "solution"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "frame_id"
   end
+
+  add_index "puzzles", ["frame_id"], name: "index_puzzles_on_frame_id"
 
   create_table "scenes", force: :cascade do |t|
     t.string   "title"
@@ -39,7 +51,10 @@ ActiveRecord::Schema.define(version: 20160318042424) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.text     "transcript"
+    t.integer  "frame_id"
   end
+
+  add_index "scenes", ["frame_id"], name: "index_scenes_on_frame_id"
 
   create_table "storyboards", force: :cascade do |t|
     t.string   "title"

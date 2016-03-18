@@ -16,3 +16,20 @@
 
 <p><%= @storyboard.description %></p>
 <p><%= @storyboard.default %></p>
+
+<header>
+	<h2>Frames</h2>
+
+	<ul class="actions">
+		<li><%= link_to "New Frame", new_storyboard_frame_path(@storyboard),
+			class: "new" %></li>
+	</ul>
+</header>
+
+<ul id="frames">
+	<% @storyboard.frames.each do |frame| %>
+		<li><%= frame.frame_order %> - <%= frame.scene.title %> - <%= frame.puzzle.name %> - <%= link_to frame.id, [@storyboard, frame] %></li>
+		<li><%= link_to "Edit Frame", [:edit, @storyboard, @frame],
+			class: "edit" %></li>
+<% end %>
+</ul>

@@ -9,7 +9,9 @@ Rails.application.routes.draw do
   resources :puzzles do 
     resources :parameters
   end
-  resources :storyboards
+  resources :storyboards do 
+    resources :frames
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

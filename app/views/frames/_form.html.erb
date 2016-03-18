@@ -1,0 +1,7 @@
+<%= simple_form_for([storyboard, frame]) do |f| %>
+	<%= f.input :frame_order, label: "Frame Order" %>
+	<%= f.input :scene, collection: @scenes %>
+	<%= f.input :puzzle, collection: @puzzles %>
+
+	<%= f.button :submit, class: "btn-primary" %>
+<% end %>
