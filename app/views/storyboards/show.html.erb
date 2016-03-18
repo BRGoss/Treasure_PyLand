@@ -1,0 +1,18 @@
+<% title(@storyboard.title, "Storyboard") %>
+	
+<header>
+	<h1><%= @storyboard.title %></h1>
+
+	<ul class="actions">
+		<li><%= link_to "Edit Storyboard",
+			edit_storyboard_path(@storyboard), class: "edit" %></li>
+		<li><%= link_to "Delete Storyboard",
+			storyboard_path(@storyboard),
+			method: :delete,
+			data: { confirm: "Are you sure you want to delete this storyboard?" },
+			class: "delete" %></li>
+	</ul>
+</header>
+
+<p><%= @storyboard.description %></p>
+<p><%= @storyboard.default %></p>

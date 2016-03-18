@@ -1,0 +1,16 @@
+<header>
+	<h1>Storyboards</h1>
+
+	<ul class="actions">
+		<li><%= link_to "New Storyboard", new_storyboard_path,
+			class: "new" %></li>
+	</ul>
+</header>
+
+<div id="storyboards">
+	<% @storyboards.each do |storyboard| %>
+		<h2><%= link_to storyboard.title, storyboard %></h2>
+		<p><%= storyboard.description %></p>
+		<p><%= storyboard.default %></p>
+	<% end %>
+</div>
