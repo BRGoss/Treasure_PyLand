@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+ <link rel="stylesheet" type="text/css"/>
+ 
+ <script>
+ function loadDoc() {
+  var callit;
+  if (window.XMLHttpRequest) {
+    // code for modern browsers
+    callit = new XMLHttpRequest();
+    } else {
+    // code for IE6, IE5
+    callit = new ActiveXObject("Microsoft.XMLHTTP");
+  }xhttp.onreadystatechange = function() {
+    if (callit.readyState == 4 && callit.status == 200) {
+		document.getElementById("demo").innerHTML = callit.responseText;
+    }
+  };
+  callit.open("GET", "../doc/ajax_text.txt", true);
+  callit.onreadystateChange("GET","",true);
+  callit.open("GET", "answer_file", true);
+  callit.open("GET", "animation_file", true);
+  callit.open("GET", "script_file", true);
+  callit.open("GET", "instruction_file",true);
+   callit.send();
+}
+</script>
+ 
+<title>Treasure PyLand</title>
+</head>
+
+<body>
+
+<button type="button" onclick="loadDoc()">Change Content</button>
+
+
+</body>
+</html>

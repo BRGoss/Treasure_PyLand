@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+<title>Treasure PyGame</title>
+<style type="text/css"> </style>
+<script>
+var sound = new Audio();
+sound.src = "../sound/Superstition.mp3";
+function loadContent(repitition){
+	sound.play();//a button of play sound now
+	var play_1 = document.getElementById("play_1");
+	play_1.innerHTML = "Play the sound effect for "+ repitition;
+}
+</script>
+</head>
+
+<body>
+
+<nav id="play_1">
+
+   <button onClick="loadContent(1)"> Sound effect 1 </button>
+   <!--<button onClick="loadContent(2)"> Sound effect 2 </button>
+   <button onClick="loadContent(3)"> Sound effect 3 </button> -->  
+</nav>
+<div id="play_1"> Defult content.......</div>
+</body>
+</html>

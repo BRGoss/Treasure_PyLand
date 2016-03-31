@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>PyGame Animation</title>
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="javascript/javascript.js"></script>
+
+<script> 
+$(document).ready(function(){
+    $("button").click(function(){
+        $("div").animate({
+            left: '250px',
+            opacity: '0.5',
+            height: '150px',
+            width: '150px'
+        });
+		
+		$("div").animate({
+			left: '450px'
+			opacity:'0.5'
+			height:'
+			
+			});
+    });
+});
+</script> 
+</head>
+
+<body>
+
+ <button>Start Animation</button>
+
+<div style="background:#F30C0F;height:100px;width:100px;position:absolute;">
+     Animation started
+</div>
+
+</body>
+</html>

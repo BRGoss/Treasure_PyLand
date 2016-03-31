@@ -1,0 +1,1 @@
+This is the page pointed by Ajax to back end of the game page.

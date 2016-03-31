@@ -1,0 +1,43 @@
+/*The program that displays a message saying you're right or wrong after the user input there answer.*/
+
+var score = 0;
+var oddoneout = Array();
+oddoneout[0] = {answer: "98"};
+var currentQuestionIndex = 0;
+
+var btnReply = document.getElementById("reply");
+
+btnReply.onclick = function(){
+    var answer = document.getElementById("answer").value;
+    characterclicked(answer);
+};
+
+function characterclicked(nr) {  
+    var feedback = document.getElementById("right_answer");
+    if (nr == oddoneout[currentQuestionIndex].answer) { 
+        score+= 200;
+    }else{
+        //alert("you are wrong it was " +   oddoneout[currentQuestionIndex].characterName);
+        feedback = document.getElementById("your_wrong");
+    }
+    feedback.style.display = "block";
+    setTimeout(function(){ 
+        feedback.style.display = "none";
+    }, 2000);
+    //nextQuestion();
+}
+.feedback {
+    display: none;
+    color: red
+}
+<div class="question">
+    how many is 0 + 98 ?
+</div>
+<input type="text" id="answer" />
+<input type="button" id="reply" value="reply" />
+<div id = "your_wrong" class="feedback"> 
+wrong answer!
+</div>
+<div id = "right_answer" class="feedback">
+Right answer! 
+</div>

@@ -1,0 +1,209 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>PyGame</title>
+<link rel="stylesheet" type="text/css" href="../css/style.css"/>
+<!--<link rel="stylesheet" type="text/css" href="../css/script.css" /-->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="../javascript/javascript.js"></script>
+<script type="text/javascript" src="../javascript/puzzle.js"></script>
+ 
+<!--
+<script> 
+$(document).ready(function(){
+    $("#flip").click(function(){
+        $("#panel").slideDown(5000);
+    });
+    $("#stop").click(function(){
+        $("#panel").stop();
+    });
+
+
+$("#flip").click(function(){
+        $("#pane2").slideDown(5000);
+    });
+    $("#stop").click(function(){
+        $("#pane2").stop();
+    });
+
+$("#flip").click(function(){
+        $("#pane3").slideDown(5000);
+    });
+    $("#stop").click(function(){
+        $("#pane3").stop();
+    });
+
+$("#flip").click(function(){
+        $("#pane4").slideDown(5000);
+    });
+    $("#stop").click(function(){
+        $("#pane4").stop();
+    });
+
+$("#flip").click(function(){
+        $("#pane5").slideDown(5000);
+    });
+    $("#stop").click(function(){
+        $("#pane5").stop();
+    });
+});
+
+</script>
+
+-->
+</head>
+
+
+<div id="aboutdiv" class="about">
+The team needs to develop the main story board for the Treasure PyLand project.  The storyboards will help us determine what images/sounds/other items we want to include in game.  It also allows us to have a good foundation on what the backend and webpage need to be able to deliver.  While the exact story/script need not be complete, we need the initial number of scenes (that may be expanded upon if time permits) that will ship with the initial release o the game. 
+</div>
+
+<div id="contactdiv" class="about">
+     <form>
+     <div class="l">
+        <input type="text" placeholder="Name"/>
+        <input type="text" placeholder="Mobile Number"/>
+        <input type="text" placeholder="Email"/>
+        <a class="submition" href="#">Submit</a>
+        
+      </div>
+      
+       <div class="l">
+            <textarea>Your Message</textarea>
+       </div>
+    </form>
+</div>
+
+<div id="instructiondiv" class="about">
+
+
+        
+   <!-- <button id="stop">Stop sliding</button> -->
+   
+     <a href="#" ><div id="flip">Click for instruction</div></a>
+     <a href="#" ><div id="panel">Puzzle 1 instruction!</div></a>
+     <a href="#" ><div id="pane2">Puzzle 2 instruction!</div></a>
+     <a href="#" ><div id="pane3">Puzzle 3 instruction!</div></a>
+     <a href="#" ><div id="pane4">Puzzle 4 instruction!</div></a>
+     <a href="#" ><div id="pane5">Puzzle 5 instruction!</div></a>
+      
+</div>
+
+
+
+
+
+<div class="fullwidth">
+
+<header class="mainheader">
+     <nav>
+       <ul> 
+          <li class="gactive"><a href="game.html">Game</a></li>
+          <li id="instruction" class="iactive"><a href="#">Instruction</a></li>
+           <li id="about" class="aactive"><a href="#">About</a></li>
+          <li id="contact" class="cactive"><a href="#">Contact</a></li>
+       </ul>
+        <form class="search">
+               <input type="text" placeholder="search..." />
+          </form>
+     </nav>
+          
+</header>
+</div>
+
+<body>
+<div class="common" id="container">
+      
+      
+   <div id="content1" align="center" >
+         <marquee align="center" scrollamount="10" direction="left" behavior="scroll"> Script goes here
+     </marquee>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+      <marquee align="center" scrollamount="10" direction="right" behavior="scroll"> Script goes here
+     </marquee>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     
+     <marquee align="center" scrollamount="10" direction="left" behavior="scroll"> Script goes here
+     </marquee>
+     
+          
+
+    <!-- <button id="stop">Stop sliding</button>  -->
+    <!--<a href="#" ><div id="flip">Click to slide down script panel</div></a>-->
+   
+   </div>
+        
+        
+  <div id="content2">
+   
+    <div id="banner_area">
+        <img class="active" src="../picture/CardboardPirateShip1.jpg" />
+        <img class="active" src="../picture/john_cleese5.jpg" />
+        <img class="active" src="../picture/treasure-boot.jpeg" />
+        <img class="active" src="../picture/corpus-christi1.jpg" />
+       
+    </div>
+</div>
+  
+  
+  
+  
+   <div id="content3">
+   
+       
+          <form action="#" name="puzzle">
+                  <select name="words" onchange="alert(document.puzzle.words.value)">
+                     <option value="- Select a Puzzle -">- Select a Puzzle -</option>
+                     <option value="The first puzzle challenge gose here?">question1</option>
+                     <option value="The second puzzle challenge gose here?">question2</option>
+                     <option value="The third  puzzle challenge gose here?">question3</option>
+                     <option value="The fourth puzzle challenge gose here?">question4</option>
+                     <option value="The fifth  puzzle challenge gose here?">question5</option>
+                  </select>
+             </form>
+      
+      <div  id="result_area" class="common">
+             <p class="outputform" type = "text" >the output is popup here</p>
+      </div>
+
+       <div  id="input_area" class="common">
+            <form action = "http://www.google.com.in" >
+
+                 <input cols="60" rows="8" class="theform" type = "text" id = "txtName" /> 
+                    <input align="center" type="submit" value="Submit" />
+                   <input align="center" type="reset" value="Reset" />
+            </form>
+      </div>
+      
+  </div>
+  
+  
+   <div id="addtional">
+      
+	  <div class="add">
+         <p> <marquee align="center" scrollamount="2" direction="down" behavior="scroll">WTAMU <br\>  2016 
+     </marquee></p>
+	  </div>
+	  
+   </div>
+   
+    
+</div>
+  
+</body>
+</html>

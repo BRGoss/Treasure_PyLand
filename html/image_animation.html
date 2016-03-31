@@ -1,0 +1,162 @@
+<!--<html>
+   
+   <head>
+      <title>Rollover with a Mouse Events</title>
+      
+      <script type="text/javascript">
+         <!
+            if(document.images){
+               var image1 = new Image(); // Preload an image
+               image1.src = "../picture/baboon2.jpg";
+               var image2 = new Image(); // Preload second image
+               image2.src = "../picture/baboon3.jpg";
+               var image3= new Image(); // Preload second image
+               image3.src = "../picture/john-cleese8.jpg";
+               var image4 = new Image(); // Preload second image
+               image4.src = "../picture/discov_island10.jpg";
+               var image5 = new Image(); // Preload second image
+               image5.src = "../picture/hanging-skeleton.jpg";
+               var image6 = new Image(); // Preload second image
+               image6.src = "../picture/john-cleese4.jpg";
+               var image7 = new Image(); // Preload second image
+               image7.src = "../picture/john-cleese6.jpg";
+            }
+      </script>
+      
+   </head>
+   
+   <body>
+      <p>Move your mouse over the image to see the result</p>
+      
+      <a href="#" onMouseOver="document.myImage.src=image2.src;" onMouseOut="document.myImage.src=image1.src;"
+      onMouseOver="document.myImage.src=image3.src;"
+      onMouseOut="document.myImage.src=image4.src;"
+      onMouseOver="document.myImage.src=image5.src;"
+      onMouseOut="document.myImage.src=image6.src;"
+      onMouseOver="document.myImage.src=image7.src;">
+      <img name="myImage" src="/images/html.gif" />
+      </a>
+   </body>
+</html>
+-->
+
+<!--
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+var looper;
+var degrees = 0;
+function rotateAnimation(el,speed){
+	var elem = document.getElementById(el);
+	if(navigator.userAgent.match("Chrome")){
+		elem.style.WebkitTransform = "rotate("+degrees+"deg)";
+	} else if(navigator.userAgent.match("Firefox")){
+		elem.style.MozTransform = "rotate("+degrees+"deg)";
+	} else if(navigator.userAgent.match("MSIE")){
+		elem.style.msTransform = "rotate("+degrees+"deg)";
+	} else if(navigator.userAgent.match("Opera")){
+		elem.style.OTransform = "rotate("+degrees+"deg)";
+	} else {
+		elem.style.transform = "rotate("+degrees+"deg)";
+	}
+	looper = setTimeout('rotateAnimation(\''+el+'\','+speed+')',speed);
+	degrees++;
+	if(degrees > 359){
+		degrees = 1;
+	}
+	document.getElementById("status").innerHTML = "rotate("+degrees+"deg)";
+}
+</script>
+</head>
+<body>
+<img id="img1" src="../picture/baboon2.jpg" alt="cog1">
+<script>rotateAnimation("img1",30);
+        rotateAnimation("img2",50);
+ </script>
+<h2 style="width:200px;" id="status"></h2>
+
+<img id="img2" src="../picture/hanging-skeleton.jpg" alt="cog2">
+<script>rotateAnimation("img2",50);</script>
+<h2 style="width:200px;" id="status"></h2>
+</body>  
+</html>
+-->
+
+
+
+<html>
+
+<head>
+<style>
+#bubblebox{ width:650px; height:250px; margin:50px auto; border:1px solid #AAA; }
+#bubbles{ width:auto; margin:0px auto; text-align:center; }
+#bubbles > div{ display:inline-block; width:10px; height:10px; margin:24px 10px 0px 10px; background:rgba(0,0,0,.1); text-align:center; border:2px solid #999; border-radius:100%; font-size:17px; text-decoration:none; transition: background 0.3s linear 0s; cursor:pointer; }
+#bubblecontent{ margin:0px auto; transition:opacity 0.3s linear 0s; font-family: Arial;}
+#bubblecontent > h2{ text-align:center; color:#7EA800; }
+#bubblecontent > p{ font-size:17px; line-height:1.5em; padding:20px 50px; color:#777; }
+</style>
+<script>
+// This simple function returns object reference for elements by ID
+function _(x){return document.getElementById(x);}
+// Variables for bubble array, bubble index, and the setInterval() variable
+var ba, bi=0, intrvl;
+// bca - Bubble Content Array. Put your content here.
+var bca = [
+    '<h2>Heading Number 1</h2><p>Content for section 1</p>',
+	'<h2>Heading Number 2</h2><p>Content for section 2</p>',
+	'<h2>Heading Number 3</h2><p>Content for section 3</p>',
+	'<h2>Heading Number 4</h2><p>Content for section 4</p>'
+];
+// This function is triggered by the bubbleSlide() function below
+function bubbles(bi){
+	// Fade-out the content
+	_("bubblecontent").style.opacity = 0;
+	// Loop over the bubbles and change all of their background color
+	for(var i=0; i < ba.length; i++){
+		ba[i].style.background = "rgba(0,0,0,.1)";
+	}
+	// Change the target bubble background to be darker than the rest
+	ba[bi].style.background = "#999";
+	// Stall the bubble and content changing for just 300ms
+	setTimeout(function(){
+		// Change the content
+		_("bubblecontent").innerHTML = bca[bi];
+		// Fade-in the content
+		_("bubblecontent").style.opacity = 1;
+	}, 300);
+}
+// This function is set to run every 5 seconds(5000ms)
+function bubbleSlide(){
+	bi++; // Increment the bubble index number
+	// If bubble index number is equal to the amount of total bubbles
+	if(bi == ba.length){
+		bi = 0; // Reset the bubble index to 0 so it loops back at the beginning
+	}
+	// Make the bubbles() function above run
+	bubbles(bi);
+}
+// Start the application up when document is ready
+window.addEventListener("load", function(){
+	// Get the bubbles array
+	ba = _("bubbles").children;
+	// Set the interval timing for the slideshow speed
+	intrvl = setInterval(bubbleSlide, 5000);
+});
+</script>
+</head>
+<body>
+<div id="bubblebox">
+  <div id="bubbles">
+    <div onclick="bubbles(0); clearInterval(intrvl);" style="background:#999;"></div>
+    <div onclick="bubbles(1); clearInterval(intrvl);"></div>
+    <div onclick="bubbles(2); clearInterval(intrvl);"></div>
+    <div onclick="bubbles(3); clearInterval(intrvl);"></div>
+  </div>
+  <div id="bubblecontent">
+    <h2>Heading Number 1</h2>
+    <p>Content for section 1</p>
+  </div>
+</div>
+</body>
+</html>
