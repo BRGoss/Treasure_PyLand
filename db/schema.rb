@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160318093211) do
+ActiveRecord::Schema.define(version: 20160319000350) do
 
   create_table "frames", force: :cascade do |t|
     t.integer  "storyboard_id"
@@ -21,6 +21,12 @@ ActiveRecord::Schema.define(version: 20160318093211) do
   end
 
   add_index "frames", ["storyboard_id"], name: "index_frames_on_storyboard_id"
+
+  create_table "games", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text     "code"
+  end
 
   create_table "parameters", force: :cascade do |t|
     t.string   "input"

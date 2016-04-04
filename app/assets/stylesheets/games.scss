@@ -1,0 +1,65 @@
+// Place all the styles related to the games controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#Wrapper {
+	
+}
+
+.navigation {
+	width: auto;
+}
+
+#Story {
+	display: flex;
+}
+
+.col {
+	flex: 1;
+}
+
+#Transcript {
+	background: red;
+}
+
+#Visual {
+	background: blue;
+}
+
+
+
+#Puzzle_Box {
+	background: green;
+	
+}
+
+#Result_Box {
+	display: none;
+}
+
+#Failure {
+	display: none;
+}
+
+#Try_Again {
+	display: none;
+}
+
+
+#Success {
+	display: none;
+}
+
+#Continue {
+	display: none;
+}
+
+@media all and (min-width: 600px) {
+
+}
+
+@media all and (min_width: 800px) {
+	#Transcript { order:1; }
+	#Visual     { order:2; }
+	#Puzzle_Box { order:3; }
+}

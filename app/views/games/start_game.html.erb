@@ -1,0 +1,37 @@
+<div class="Wrapper">
+	<%= render "nav" %>
+	<div id="Story">
+	<section id="Transcript" class="col">
+		<%= @story.scene.transcript %>
+	</section>
+
+	<section id="Visual" class="col">
+		<%= @story.scene.visual %>
+	</section>
+	</div>
+
+	<div id="Puzzle_Box">
+		<section id="Contract">
+			<%= @story.puzzle.contract %>
+		</section>
+
+		<section id="Input">
+			<%= simple_form_for @game, url: test_code_games_path, remote: true do |f| %>
+				<%= f.input :code %>
+				<%= hidden_field_tag :parameter_id, @para.id %>
+
+				<%= submit_tag "Test Code", class: "btn-primary" %>
+			<% end %>
+		</section>
+
+		<section id="Result_Box">
+			<p id="Success">Success!!</p>
+			<p id="Failure">Sorry, but that is incorrect</p>
+			<%= simple_form_for @game, url: continue_game_games_path, remote: true do |f| %>
+			<%= hidden_field_tag :frame_order, @story.frame_order, :autocomplete => :off %>
+			<%= submit_tag "Continue", class:"new", id: "Continue" %>
+			<%= submit_tag "Try Again", class: "delete", id: "Try_Again" %>
+			<% end %>
+		</section>
+	</div>
+</div>
