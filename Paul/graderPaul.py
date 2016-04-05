@@ -38,6 +38,7 @@ def MyGrader(the_code):
             result=locals()['studentAnswer']
         except:
             result='INCORRECT - '+(str)(sys.exc_info()[1])
+            return result
     else:
         result='Incorrect'
     return result
@@ -65,7 +66,8 @@ def driver():
         theDef=theDef.split()[1]
         theDef=theDef.split('(')[0]
     test_case = 'studentAnswer='+theDef+'('+args.test_case+')'
-    theCode=student_code+test_case
+    theCode=student_code+"\n"+test_case
+    print(theCode)
     return MyGrader(theCode)
 print(driver())
 
