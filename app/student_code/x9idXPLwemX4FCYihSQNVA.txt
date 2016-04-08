@@ -1,0 +1,3 @@
+def titleCase(theString):
+    answer = theString.title()
+    return answer

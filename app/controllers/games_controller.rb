@@ -22,9 +22,10 @@ class GamesController < ApplicationController
 		# byebug
 		puts "\n\n"
 		puts "Testing Python Code"
+		puts "code....." + params[:game][:code]
 		argument = Parameter.find(params[:parameter_id]).input
 		correct_output = Parameter.find(params[:parameter_id]).output
-		result = Game.testing_code(params[:code], argument)
+		result = Game.testing_code(params[:game][:code], argument)
 		puts result
 		puts "Done testing Python Code"
 		puts "\n\n"
@@ -73,8 +74,9 @@ class GamesController < ApplicationController
 	private
 
 	def test_params
-		params.require(:game).permit(:code, :puzzle_id, :parameter_id,
-						:story_id, :frame_order)
+		params.require(:game).permit(:code)
+		puts "\n\nTest Params with Code"
+		puts (params[:game][:code])
 	end
 
 	def continue_params
