@@ -12,6 +12,7 @@ class MyVisitor(ast.NodeVisitor):
     def visit_FunctionDef(self,node):
         defCounter=1
         for item in range(len(node.body)):
+            ast.NodeVisitor.generic_visit(self, node)
             try:
                 finder=node.body[item].name
                 defCounter+=1
@@ -21,10 +22,15 @@ class MyVisitor(ast.NodeVisitor):
             self.found=True
     def visit_Call(self,node):
         try:
-            if(node.func.id=='open'):
+            if(((node.func.id=='open' or node.func.id=='compile') or node.func.id=='exec')or node.func.id=='eval'):
                 self.found=True
         except:
             pass
+           
+    def visit_Expr(self,node):
+        if(node.value.args[0].value.id=='sys'):
+            self.found=True
+        
 
 def MyGrader(the_code):
     result='Incorrect'
@@ -39,7 +45,7 @@ def MyGrader(the_code):
         except:
             result='INCORRECT - '+(str)(sys.exc_info()[1])
     else:
-        result='Incorrect'
+        result='VIOLATION'
     return result
 
 def driver():
@@ -54,7 +60,7 @@ def driver():
     student_code=student_code.replace('\\n','\n')
     student_code=student_code.replace('\\t','    ')
     theDef=''
-    if student_code[:1]=='#':
+    if student_code[:3]!='def':
         theArguments=student_code.split('def')
         theDef=theArguments[1]
         theDef=theDef.split()[0]
@@ -64,9 +70,12 @@ def driver():
         theDef=theArguments[0]
         theDef=theDef.split()[1]
         theDef=theDef.split('(')[0]
-    test_case = 'studentAnswer='+theDef+'('+args.test_case+')'
+    try:
+        test_code=open(args.test_case).read()
+    except:
+        test_code=args.test_case
+    test_case = 'studentAnswer='+theDef+'('+test_code+')'
     theCode=student_code+test_case
+    #print(theCode)
     return MyGrader(theCode)
 print(driver())
-
-
