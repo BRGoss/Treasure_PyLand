@@ -17,14 +17,16 @@
 
 		<section id="Input">
 			<%= simple_form_for @game, url: test_code_games_path, remote: true do |f| %>
-				<%= f.input :code %>
+				<%= f.input :code, input_html: {value: @story.puzzle.solution} %>
 				<%= hidden_field_tag :parameter_id, @para.id %>
 
 				<%= submit_tag "Test Code", class: "btn-primary" %>
 			<% end %>
 		</section>
+	</div>
+</div>
 
-		<section id="Result_Box">
+<section id="Result_Box">
 			<p id="Success">Success!!</p>
 			<p id="Failure">Sorry, but that is incorrect</p>
 			<%= simple_form_for @game, url: continue_game_games_path, remote: true do |f| %>
@@ -33,5 +35,3 @@
 			<%= submit_tag "Try Again", class: "delete", id: "Try_Again" %>
 			<% end %>
 		</section>
-	</div>
-</div>

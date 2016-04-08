@@ -20,6 +20,11 @@
 @import "scenes";
 @import "storyboards";
 
+body {
+	background-color: #000;
+	color: #FFF;
+}
+
 header {
 	@extend .page-header;
 	position: relative;
