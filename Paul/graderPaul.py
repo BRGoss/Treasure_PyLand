@@ -3,6 +3,7 @@ import argparse
 import sys
 import ast
 
+debug=False
 class MyVisitor(ast.NodeVisitor):
     def __init__(self):
         self.found = False
@@ -73,7 +74,9 @@ def driver():
         theDef=theDef.split('(')[0]
     test_case = 'studentAnswer='+theDef+'('+args.test_case+')'
     theCode=student_code+"\n"+test_case
-    print(theCode)
+    global debug
+    if debug:
+        print(theCode)
     try:
         test_code=open(args.test_case).read()
     except:
@@ -83,4 +86,5 @@ def driver():
     #print(theCode)
 
     return MyGrader(theCode)
+    
 print(driver())
