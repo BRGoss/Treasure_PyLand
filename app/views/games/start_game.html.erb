@@ -14,6 +14,9 @@
 		<section id="Contract">
 			<%= @story.puzzle.contract %>
 		</section>
+		<section id="Parameter">
+			<%= @para.input %>
+		</section>
 
 		<section id="Input">
 			<%= simple_form_for @game, url: test_code_games_path, remote: true do |f| %>
@@ -31,7 +34,7 @@
 			<p id="Failure">Sorry, but that is incorrect</p>
 			<%= simple_form_for @game, url: continue_game_games_path, remote: true do |f| %>
 			<%= hidden_field_tag :frame_order, @story.frame_order, :autocomplete => :off %>
-			<%= submit_tag "Continue", class:"new", id: "Continue" %>
-			<%= submit_tag "Try Again", class: "delete", id: "Try_Again" %>
+			<%= submit_tag "Continue", id: "Continue" %>
+			<%= submit_tag "Try Again", id: "Try_Again" %>
 			<% end %>
 		</section>

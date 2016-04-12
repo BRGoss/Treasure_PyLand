@@ -5,3 +5,17 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+# coding: utf-8
+
+%w{
+  scenes_seed
+}.each do |part|
+  require File.expand_path(File.dirname(__FILE__))+"/seeds/#{part}.rb"
+end
+
+story = Storyboard.create!(title: 'Alpha Board',
+				   		   description: 'Initial board',
+				   		   default: true)
+
+#Scene.update_all(frame_id: story[:id])
