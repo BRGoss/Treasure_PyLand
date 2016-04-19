@@ -61,5 +61,4 @@ class StoryboardsController < ApplicationController
 		flash[:alert] = "The storyboard you were looking for could not be found."
 		redirect_to storyboards_path
 	end
-
 end

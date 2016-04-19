@@ -50,8 +50,6 @@ class FramesController < ApplicationController
 		redirect_to @storyboard
 	end
 	
-
-
 	private
 
 	def set_storyboard
@@ -83,5 +81,4 @@ class FramesController < ApplicationController
 		@scene = Scene.find(scene_params[:scene])
 		rescue ActiveRecord::RecordNotFound
 	end
-
 end

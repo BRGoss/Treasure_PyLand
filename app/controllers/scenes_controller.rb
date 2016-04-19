@@ -39,7 +39,6 @@ class ScenesController < ApplicationController
 			flash.now[:alert] = "Scene has not been updated."
 			render "edit"
 		end
-
 	end
 
 	def destroy
@@ -49,7 +48,6 @@ class ScenesController < ApplicationController
 		flash[:notice] = "Scene has been deleted."
 		redirect_to scenes_path
 	end
-
 
 	private
 
@@ -63,5 +61,4 @@ class ScenesController < ApplicationController
 		flash[:alert] = "The scene you were looking for could not be found."
 		redirect_to scenes_path
 	end
-
 end

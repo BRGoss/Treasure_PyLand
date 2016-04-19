@@ -10,16 +10,15 @@ class GamesController < ApplicationController
 		@game = Game.new
 		session[:frame] = session[:frame] || 1
 		storyboard = Storyboard.find_by default: true
-		if (finished?(session[:frame], storyboard))
-			session[:frame] = 1
-		end
+		session[:frame] = 1 if (finished?(session[:frame], storyboard))
 		@story = storyboard.frames.find_by frame_order: session[:frame] 
 		@para = @story.puzzle.parameters.all.sample
 		render :start_game
+		#byebug
 	end
 
 	def test_code
-		# byebug
+		#byebug
 		puts "\n\n"
 		puts "Testing Python Code"
 		argument = Parameter.find(params[:parameter_id]).input
@@ -36,6 +35,8 @@ class GamesController < ApplicationController
 	end
 
 	def continue_game
+		#byebug
+		@debug = true
 		session[:frame] += 1
 		@game = Game.new
 		storyboard = Storyboard.find_by default: true
@@ -59,6 +60,10 @@ class GamesController < ApplicationController
 		render :game_over
 	end
 
+	def show_errors(result)
+		render :show_errors
+	end
+
 	private
 
 	def test_params
@@ -71,7 +76,6 @@ class GamesController < ApplicationController
 	end
 
 	def finished?(frame, storyboard)
-		max = storyboard.frames.maximum("frame_order")
+		frame > storyboard.frames.maximum("frame_order")
 	end
-
 end

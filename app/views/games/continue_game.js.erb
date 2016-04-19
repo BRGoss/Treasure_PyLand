@@ -7,3 +7,6 @@ $('#Parameter').html("<%=j @para.input %>");
 $('#Result_Box').hide();
 $('#Success').hide();
 $('#Continue').hide();
+if ( <%= @debug %> ) {
+	$('#game_code').html("<%=j @story.puzzle.solution %>");
+}

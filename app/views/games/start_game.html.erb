@@ -20,6 +20,9 @@
 
 		<section id="Input">
 			<%= simple_form_for @game, url: test_code_games_path, remote: true do |f| %>
+				<% if @debug %>
+					
+				<% end %>
 				<%= f.input :code, input_html: {value: @story.puzzle.solution} %>
 				<%= hidden_field_tag :parameter_id, @para.id %>
 

@@ -43,7 +43,6 @@ class ParametersController < ApplicationController
 		redirect_to @puzzle
 	end
 
-
 	private
 
 	def set_puzzle
