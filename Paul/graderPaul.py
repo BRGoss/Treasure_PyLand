@@ -11,45 +11,40 @@ class MyVisitor(ast.NodeVisitor):
         
     def visit_Import(self,stmt_import):
         self.found=True
+        return
 
     def visit_FunctionDef(self,node):
         self.defCount+=1
         for item in range(len(node.body)):
-            ast.NodeVisitor.generic_visit(self, node)
+            ast.NodeVisitor.generic_visit(self, node.body[item])
             try:
                 finder=node.body[item].name
                 self.defCount+=1
             except:
-                pass
-        if(self.defCount>1):
-            self.found=True
+                try:
+                    if node.body[item].value.func.id in ('open','compile','exec','eval'):
+                        self.found=True
+                except:
+                    pass
+            if self.defCount > 1:
+                self.found=True
     def visit_Call(self,node):
-        
         try:
-            if node.func.id=='open':
-                self.found=True
-            elif node.func.id=='compile':
-                self.found=True
-            elif node.func.id=='exec':
-                self.found=True
-            elif node.func.id=='eval':
+            if node.func.id in ('open','compile','exec','eval'):
                 self.found=True
         except:
             pass
            
     def visit_Expr(self,node):
         try:
-            if(node.value.args[0].value.id=='sys'):
+            if node.value.args[0].value.id=='sys':
                 self.found=True
         except:
-            if node.value.func.id=='open':
-                self.found=True
-            elif node.value.func.id=='compile':
-                self.found=True
-            elif node.value.func.id=='exec':
-                self.found=True
-            elif node.value.func.id=='eval':
-                self.found=True       
+            try:
+                if node.value.func.id in ('open','compile','exec','eval'):
+                    self.found=True
+            except:
+                pass   
 
 def MyGrader(the_code):
     result='Incorrect'
