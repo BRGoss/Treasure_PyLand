@@ -108,7 +108,7 @@ puzzle["in5"] = "\"abctreasuredef\""
 puzzle["out5"] = "treasure"
 
 puzzle["sol5"] = "def find(toLookIn, toFind]:\n" +
-				 "\tindex = string.find(toLookIn,toFind)\n" +
+				 "\tindex = toLookIn.find(toFind)\n" +
 				 "\treturn toLookIn[index:index + len(toFind)]\n"
 
 puzzle["name6"] = "Reorder"
@@ -129,7 +129,7 @@ puzzle["in6"] = "\"79016xCanyonxAvexTXx4thx2501\", \"x\", [6, 5, 3, 2, 4, 1]"
 puzzle["out6"] = "2501 4th Ave Canyon Tx 79016"
 
 puzzle["sol6"] = "def getLocation(toDecode, split, decoder):\n" +
-					 "\ttheList = string.split(toDecode, split)\n" +
+					 "\ttheList = toDecode.split(split)\n" +
 					 "\tfor index in range(len(decoder)):\n" +
 						 "\t\tdecoder[index] = theList[decoder[index - 1]\n" +
 					 "\tanswer = ' '.join(decoder)\n" +
@@ -157,7 +157,7 @@ puzzle["out7"] = "Monty Jones"
 
 puzzle["sol7"] = "def reverseScramble(toDecode, splitString, decoder):\n" +
 				 "\ttoDecode = toDecode[::-1]\n" +
-				 "\tsplitList = string.split(toDecode, splitString)\n" +
+				 "\tsplitList = toDecode.split(splitString)\n" +
 				 "\tfor i in range(len(decoder)):\n" +
 				 "\t\tminiArray = [int(j) for j in str(decoder[i])]\n" +
 				 "\t\tfor k in range(len(miniArray)):\n" +
@@ -206,7 +206,7 @@ puzzle["out9"] = "ago time long long A"
 
 puzzle["sol9"] = <<SOLUTION
 def reverse_words(sentence):
-	words = ' '.join(string.split(sentence, ' ')[::-1])
+	words = ' '.join(sentence.split(' ')[::-1])
 	return words
 SOLUTION
 
