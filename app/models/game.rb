@@ -4,13 +4,13 @@ class Game < ActiveRecord::Base
 		#return true
 		#return %x{python3 Paul/graderPaul.py app/models/testcode.txt "'hELLO_worLD'" }
 		filename = random_string
-		puts "\n\nCode to be saved\n\n"
-		puts code
 		File.open("app/student_code/#{filename}", "w") do |f|
 			f.puts("#{code}")
 			f.close
 		end
-		return %x{python3 Paul/graderPaul.py app/student_code/#{filename} '#{arg}' }
+		value = %x{python3 Paul/graderPaul.py app/student_code/#{filename} '#{arg}' }
+		puts "Value = " + value
+		return value
 	end
 
 	protected

@@ -22,31 +22,20 @@ class GamesController < ApplicationController
 		# byebug
 		puts "\n\n"
 		puts "Testing Python Code"
-		puts "code....." + params[:game][:code]
 		argument = Parameter.find(params[:parameter_id]).input
 		correct_output = Parameter.find(params[:parameter_id]).output
 		result = Game.testing_code(params[:game][:code], argument)
-		puts result
 		puts "Done testing Python Code"
 		puts "\n\n"
-		result = true
-		if (result)
+		answer = (result.to_s.strip == correct_output.to_s.strip)
+		if (answer)
 			render :test_success
 		else
 			render :test_failure
 		end
-		
-#		storyboard = Storyboard.find params[:story_id]
-#		@story = storyboard.frames.find_by frame_order: params[:frame_order]
-
-#		render :test_result
 	end
 
 	def continue_game
-		# if params[:start_over]
-		# 	render :start_game
-		# 	return
-		# end
 		session[:frame] += 1
 		@game = Game.new
 		storyboard = Storyboard.find_by default: true
@@ -64,7 +53,6 @@ class GamesController < ApplicationController
 	def restart_game
 		session[:frame] = 1
 		start_game
-		# redirect_to url_for start_game_games_path
 	end
 
 	def game_over
@@ -75,21 +63,15 @@ class GamesController < ApplicationController
 
 	def test_params
 		params.require(:game).permit(:code)
-		puts "\n\nTest Params with Code"
-		puts (params[:game][:code])
 	end
 
 	def continue_params
 		params.permit(:frame_order)
 		value = params[:frame_order]
-		puts "\n\ncontinue_params\n"
-		puts value
 	end
 
 	def finished?(frame, storyboard)
 		max = storyboard.frames.maximum("frame_order")
-		puts "\n\nFrame #{max} > Max #{max}\n\n"
-		frame > max
 	end
 
 end
