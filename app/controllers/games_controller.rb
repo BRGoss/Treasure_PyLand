@@ -3,6 +3,7 @@ class GamesController < ApplicationController
 	respond_to :html, only: [:start_game, :game_over, :restart_game]
 	before_action :test_params, only: [:test_code]
 	before_action :continue_params, only: [:continue_game]
+	before_action :set_debug, only: [:start_game, :continue_game, :restart_game]
 
 	def start_game
 		# if session is nil, then start game fresh, otherwise
@@ -36,12 +37,10 @@ class GamesController < ApplicationController
 
 	def continue_game
 		#byebug
-		@debug = true
 		session[:frame] += 1
 		@game = Game.new
 		storyboard = Storyboard.find_by default: true
 		if (finished?(session[:frame], storyboard))
-			# render :text => 'window.location.href ="http://localhost:3000' + game_over_games_path + '";'
 			render :text => 'window.location.href ="' + game_over_games_path + '";'
 		else
 			value = params[:frame_order]
@@ -65,6 +64,10 @@ class GamesController < ApplicationController
 	end
 
 	private
+
+	def set_debug
+		@debug = true
+	end
 
 	def test_params
 		params.require(:game).permit(:code)

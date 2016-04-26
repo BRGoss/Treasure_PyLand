@@ -4,7 +4,7 @@ scene["title1"] = "In the Beginning"
 
 scene["desc1"] = "The beginning of the story..."
 
-scene["visual1"] = "Code goes here..."
+scene["visual1"] = "&#9760"
 
 scene["script1"] = <<TRANSCRIPT
 	You've just arrived at WTAMU an found that you could use a few 
@@ -26,7 +26,7 @@ scene["title2"] = "Getting the Chest"
 
 scene["desc2"] = "You've gotten a rather odd form of payment"
 
-scene["visual2"] = "Code goes here..."
+scene["visual2"] = "&#9760"
 
 scene["script2"] = <<TRANSCRIPT
 	"Excellent!  It looks fantastic!  Unfortunately, due to the lack 
@@ -54,7 +54,7 @@ scene["title3"] = "Opening the Chest"
 
 scene["desc3"] = "Amidst the junk, something catches your interest"
 
-scene["visual3"] = "Code goes here..."
+scene["visual3"] = "&#9760"
 
 scene["script3"] = <<TRANSCRIPT
 "Success!  As the lid opens, you receive a rather strong slap on 
@@ -88,7 +88,7 @@ scene["title4"] = "Meeting the Good Professor"
 
 scene["desc4"] = "The Eccentricity Just Went to 11"
 
-scene["visual4"] = "Code goes here..."
+scene["visual4"] = "&#9760"
 
 scene["script4"] = <<TRANSCRIPT
 Upon arriviing at the university, a secretary is nice enough to show you to
@@ -123,7 +123,7 @@ scene["title5"] = "Meeting Long John Slither"
 
 scene["desc5"] = "You get a boat and a different kind of cook"
 
-scene["visual5"] = "Code goes here..."
+scene["visual5"] = "&#9760"
 
 scene["script5"] = <<TRANSCRIPT
 Arriving at the docks, you begin your search for a ship to take you on your
@@ -148,7 +148,7 @@ scene["title6"] = "Bon Voyage!"
 
 scene["desc6"] = "And the adventure begins"
 
-scene["visual6"] = "Code goes here..."
+scene["visual6"] = "&#9760"
 
 scene["script6"] = <<TRANSCRIPT
 A few days later you and your crew have set sail and are now out on the open sea.
@@ -168,7 +168,7 @@ scene["title7"] = "Avast, Land Ho!"
 
 scene["desc7"] = "The island looms, and so does foul treachery"
 
-scene["visual7"] = "Code goes here..."
+scene["visual7"] = "&#9760"
 
 scene["script7"] = <<TRANSCRIPT
 "Land!  Thank God and his son Brian! Hopefully there's food here that's 
@@ -196,7 +196,7 @@ scene["title8"] = "Fight!"
 
 scene["desc8"] = "You catch up to the pyrates..."
 
-scene["visual8"] = "Codes goes here...."
+scene["visual8"] = "&#9760"
 
 scene["script8"] = <<TRANSCRIPT
 If a group of pyrates wasn't easy enough to follow in the sand, the slither
@@ -210,7 +210,7 @@ scene["title9"] = "Almost There"
 
 scene["desc9"] = "You find yourselves close to the end of your journey"
 
-scene["visual9"] = "Code goes here..."
+scene["visual9"] = "&#9760"
 
 scene["script9"] = <<TRANSCRIPT
 "... and that's for cooking my hat!"  Seemingly satisified with the pyrates'
@@ -229,9 +229,26 @@ scene["script9"] = <<TRANSCRIPT
 	is what is hopefully the last puzzle of this trip
 TRANSCRIPT
 
+scene["title10"] = "At Last, the Last"
+
+scene["desc10"] = "At last, you find the treasure, only one thing remains..."
+
+scene["visual10"] = "&#9760"
+
+scene["script10"] = <<TRANSCRIPT
+A door slides open, revealing a second chamber.  This one however is home to a
+	very large, gold plated chest in the center of the room.  "Well it's about
+	bloody time!  Now as long as this doesn't melt our faces when we open it, I 
+	think we can call this a rather excellent adventure!"  Hopefully this isn't 
+	the Ark, but just in case, it might be best to be careful!  Aside the chest,
+	the room is rather unremarkable.  No gold, no coins, no gems, nothing that
+	would indicate any vast wealth except for what may lie in the chest.  
+	Examining the chest...another puzzle!  What could it mean?
+TRANSCRIPT
+
 Scene.delete_all
 
-1.upto(9) do |counter|
+1.upto(10) do |counter|
 	Scene.create!(title: scene["title#{counter}"],
 				  description: scene["desc#{counter}"],
 				  visual: scene["visual#{counter}"],

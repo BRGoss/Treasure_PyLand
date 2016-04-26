@@ -19,6 +19,8 @@ Rails.application.routes.draw do
       post :continue_game
       get :restart_game
       get :game_over
+      get :instructions
+      get :about
     end
   end
 

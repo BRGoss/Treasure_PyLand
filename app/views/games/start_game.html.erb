@@ -1,12 +1,13 @@
+<div id="outside-border">
 <div class="Wrapper">
-	<%= render "nav" %>
+	<%= render "game_nav" %>
 	<div id="Story">
 	<section id="Transcript" class="col">
 		<%= @story.scene.transcript %>
 	</section>
 
 	<section id="Visual" class="col">
-		<%= @story.scene.visual %>
+		<%= @story.scene.visual.html_safe %>
 	</section>
 	</div>
 
@@ -14,30 +15,66 @@
 		<section id="Contract">
 			<%= @story.puzzle.contract %>
 		</section>
-		<section id="Parameter">
-			<%= @para.input %>
+		<section id="Parameter_Section">
+			Your Input: <span id="Parameter"> <%= @para.input %></span>
 		</section>
 
 		<section id="Input">
 			<%= simple_form_for @game, url: test_code_games_path, remote: true do |f| %>
 				<% if @debug %>
-					
+					<%= f.input :code, input_html: {value: @story.puzzle.solution} %>
+				<% else %>
+					<%= f.input :code%>
 				<% end %>
-				<%= f.input :code, input_html: {value: @story.puzzle.solution} %>
 				<%= hidden_field_tag :parameter_id, @para.id %>
-
-				<%= submit_tag "Test Code", class: "btn-primary" %>
+				<div class="button_alignment">
+				<%= f.submit "Test Code", id: "test_code" %>
+				</div>
 			<% end %>
 		</section>
 	</div>
 </div>
 
 <section id="Result_Box">
-			<p id="Success">Success!!</p>
+	<div id="Test_Success">
+		<p id="Success">Congratulations!</p>
+		<%= simple_form_for @game, url: continue_game_games_path, remote: true do |f| %>
+			<%= hidden_field_tag :frame_order, @story.frame_order, :autocomplete => :off %>
+			<div class="button_alignment">
+			<%= f.submit "Continue", id: "Continue" %>
+			</div>
+		<% end %>
+	</div>
+
+	<div id="Test_Failure">
+		<p id="Failure">Sorry, but that is incorrect</p>
+		<div class="button_alignment">
+		<button id="Try_Again">Try Again
+		</div>
+	</div>
+</section>
+
+
+
+
+
+
+			<!-- <p id="Success">Success!!</p>
 			<p id="Failure">Sorry, but that is incorrect</p>
 			<%= simple_form_for @game, url: continue_game_games_path, remote: true do |f| %>
 			<%= hidden_field_tag :frame_order, @story.frame_order, :autocomplete => :off %>
 			<%= submit_tag "Continue", id: "Continue" %>
 			<%= submit_tag "Try Again", id: "Try_Again" %>
 			<% end %>
-		</section>
+		</section> -->
+
+</div>
+<script>
+$(function(){ // If you are not familiar with jQuery, this will run when the page is loaded and ready
+  $('#Try_Again').click(function(){
+    $('#Test_Failure').hide(); 
+    $('#Result_Box').hide();
+  });
+});
+</script>
+

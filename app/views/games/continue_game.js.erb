@@ -3,10 +3,10 @@ $('#Contract').html("<%=j @story.puzzle.contract %>");
 $('#parameter_id').val("<%= @para.id.to_s %>");
 $('#frame_order').val("<%= @story.frame_order %>");
 $('#Parameter').html("<%=j @para.input %>");
-//$('#session').text('<%= session[:frame] %>');
 $('#Result_Box').hide();
-$('#Success').hide();
-$('#Continue').hide();
-if ( <%= @debug %> ) {
+$('#Test_Success').hide();
+<% if @debug %>
 	$('#game_code').html("<%=j @story.puzzle.solution %>");
-}
+<% else %>
+	$('#game_code').val("");
+<% end %>

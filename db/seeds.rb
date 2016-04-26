@@ -20,7 +20,7 @@ story = Storyboard.create!(title: 'Alpha Board',
 
 #Scene.update_all(frame_id: story[:id])
 
-1.upto(9) do |counter|
+1.upto(10) do |counter|
 	frame = story.frames.create!(frame_order: counter)
 	scene = Scene.find(counter)
 	scene.frame_id = frame.frame_order

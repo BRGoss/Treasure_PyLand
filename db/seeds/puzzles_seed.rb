@@ -103,11 +103,11 @@ puzzle["con5"] = "Define a function called find that takes two inputs.  " +
 				"is looking for.  The output should be the substring in the " +
 				"first input that is the second input"
 
-puzzle["in5"] = "\"abctreasuredef\""
+puzzle["in5"] = "\"abctreasuredef\", \"treasure\""
 
 puzzle["out5"] = "treasure"
 
-puzzle["sol5"] = "def find(toLookIn, toFind]:\n" +
+puzzle["sol5"] = "def find(toLookIn, toFind):\n" +
 				 "\tindex = toLookIn.find(toFind)\n" +
 				 "\treturn toLookIn[index:index + len(toFind)]\n"
 
@@ -126,12 +126,12 @@ puzzle["con6"] = "Define a function called getLocation that accepts three " +
 
 puzzle["in6"] = "\"79016xCanyonxAvexTXx4thx2501\", \"x\", [6, 5, 3, 2, 4, 1]"
 
-puzzle["out6"] = "2501 4th Ave Canyon Tx 79016"
+puzzle["out6"] = "2501 4th Ave Canyon TX 79016"
 
 puzzle["sol6"] = "def getLocation(toDecode, split, decoder):\n" +
 					 "\ttheList = toDecode.split(split)\n" +
 					 "\tfor index in range(len(decoder)):\n" +
-						 "\t\tdecoder[index] = theList[decoder[index - 1]\n" +
+						 "\t\tdecoder[index] = theList[decoder[index] - 1]\n" +
 					 "\tanswer = ' '.join(decoder)\n" +
 					 "\treturn answer"
 
@@ -179,7 +179,7 @@ CONTRACT
 
 puzzle["in8"] = "\"97 98 99 100 101\""
 
-puzzle["out8"] = "abcde"
+puzzle["out8"] = "a b c d e"
 
 puzzle["sol8"] = <<SOLUTION 
 def replace_ascii(inputString):
@@ -210,11 +210,49 @@ def reverse_words(sentence):
 	return words
 SOLUTION
 
+puzzle["name10"] = "Find Unique"
+
+puzzle["desc10"] = "Find the words with all unique letters"
+
+puzzle["con10"] = <<CONTRACT
+Define a function that takes one string.  The function will find all 
+unique words in the string.  Each word is separated by a single 
+space.  It will return a string of all the unique words separated 
+spaces.  If there are no unique words return the string \'No unique 
+words found\'.  Note that the function should be case insensitive, 
+i.e. \'T\' == \'t\'
+***Note that unique words in this context means a word with all 
+unique letters, no duplicates
+CONTRACT
+
+puzzle["in10"] = "\"Turn immediately right at all the tree stump\""
+
+puzzle["out10"] = "Turn right at the stump"
+
+puzzle["sol10"] = <<SOLUTION
+def findUniqueWords(theString):
+	theList = theString.split(' ')
+	theAnswer = ''
+	isUnique = True
+	for word in theList:
+		theWord = word.lower()
+		theSet = set(theWord)
+		if len(theSet) != len(theWord):
+			isUnique = False
+		if isUnique:
+			theAnswer += word + ' '
+		isUnique = True
+	if theAnswer == '':
+		theAnswer = 'No unique words found'
+	else:
+		theAnswer = theAnswer[:len(theAnswer) - 1]
+	return theAnswer
+SOLUTION
 
 
 Puzzle.delete_all
 
-1.upto(9) do |counter|
+1.upto(10) do |counter|
 # (1..7).each do |counter|
 
 	puzz = Puzzle.create!(name: puzzle["name#{counter}"],
