@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20160319000350) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "frames", force: :cascade do |t|
     t.integer  "storyboard_id"
     t.datetime "created_at",    null: false
@@ -20,7 +23,7 @@ ActiveRecord::Schema.define(version: 20160319000350) do
     t.integer  "frame_order"
   end
 
-  add_index "frames", ["storyboard_id"], name: "index_frames_on_storyboard_id"
+  add_index "frames", ["storyboard_id"], name: "index_frames_on_storyboard_id", using: :btree
 
   create_table "games", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -36,7 +39,7 @@ ActiveRecord::Schema.define(version: 20160319000350) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "parameters", ["puzzle_id"], name: "index_parameters_on_puzzle_id"
+  add_index "parameters", ["puzzle_id"], name: "index_parameters_on_puzzle_id", using: :btree
 
   create_table "puzzles", force: :cascade do |t|
     t.string   "name"
@@ -48,7 +51,7 @@ ActiveRecord::Schema.define(version: 20160319000350) do
     t.integer  "frame_id"
   end
 
-  add_index "puzzles", ["frame_id"], name: "index_puzzles_on_frame_id"
+  add_index "puzzles", ["frame_id"], name: "index_puzzles_on_frame_id", using: :btree
 
   create_table "scenes", force: :cascade do |t|
     t.string   "title"
@@ -60,7 +63,7 @@ ActiveRecord::Schema.define(version: 20160319000350) do
     t.integer  "frame_id"
   end
 
-  add_index "scenes", ["frame_id"], name: "index_scenes_on_frame_id"
+  add_index "scenes", ["frame_id"], name: "index_scenes_on_frame_id", using: :btree
 
   create_table "storyboards", force: :cascade do |t|
     t.string   "title"
@@ -70,4 +73,8 @@ ActiveRecord::Schema.define(version: 20160319000350) do
     t.datetime "updated_at",  null: false
   end
 
+  add_foreign_key "frames", "storyboards"
+  add_foreign_key "parameters", "puzzles"
+  add_foreign_key "puzzles", "frames"
+  add_foreign_key "scenes", "frames"
 end
