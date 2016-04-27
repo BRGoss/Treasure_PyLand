@@ -8,7 +8,9 @@ class Game < ActiveRecord::Base
 			f.puts("#{code}")
 			f.close
 		end
-		value = %x{python3 Paul/graderPaul.py app/student_code/#{filename} '#{arg}' }
+#		output = `/app/.heroku/python/bin/python /app/Paul/graderPaul.py`
+#		value = %x{python3 Paul/graderPaul.py app/student_code/#{filename} '#{arg}' }
+		value = %x{/app/.heroku/python/bin/python /app/Paul/graderPaul.py app/student_code/#{filename} '#{arg}'}
 		puts "Value = " + value
 		return value
 	end
