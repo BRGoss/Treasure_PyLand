@@ -1,51 +1,75 @@
-import string
 import argparse
 import sys
 import ast
+import math
 
 debug=False
 class MyVisitor(ast.NodeVisitor):
     def __init__(self):
         self.found = False
         self.defCount=0
+        self.errorMessage=''
         
-    def visit_Import(self,stmt_import):
+    def visit_Import(self,node):
         self.found=True
+        self.errorMessage='import statement found'
         return
 
+    def visit_ClassDef(self,node):
+        self.found=True
+        self.errorMessage='class found'
+        return
+        
     def visit_FunctionDef(self,node):
         self.defCount+=1
         for item in range(len(node.body)):
-            ast.NodeVisitor.generic_visit(self, node.body[item])
-            try:
-                finder=node.body[item].name
-                self.defCount+=1
-            except:
-                try:
-                    if node.body[item].value.func.id in ('open','compile','exec','eval'):
-                        self.found=True
-                except:
-                    pass
-            if self.defCount > 1:
-                self.found=True
+            ast.NodeVisitor.visit(self,node.body[item])
+        if self.defCount > 1:
+            self.found=True
+            self.errorMessage='multiple defs found'
+            
     def visit_Call(self,node):
-        try:
+        print(node.args)
+        if hasattr(node.func,'value'):
+            if hasattr(node.func.value,'s'):
+                if len(node.func.value.s) > 1:
+                    self.found=True
+                    self.errorMessage='String literal longer than 1 found'
+            else:
+                ast.NodeVisitor.visit(self,node.args[0])
+        elif hasattr(node.func,'id'):
             if node.func.id in ('open','compile','exec','eval'):
                 self.found=True
-        except:
-            pass
+                self.errorMessage='use of illegal command found'
+            else:
+                for item in range(len(node.args)):
+                    try:
+                        ast.NodeVisitor.visit(self,node.args[item])
+                    except:
+                        pass
            
     def visit_Expr(self,node):
-        try:
-            if node.value.args[0].value.id=='sys':
+        if hasattr(node.value,'s'):
+            if len(node.value.s) > 1:
                 self.found=True
-        except:
-            try:
-                if node.value.func.id in ('open','compile','exec','eval'):
-                    self.found=True
-            except:
-                pass   
-
+                self.errorMessage='String literal longer than 1 found'
+        else:
+            ast.NodeVisitor.visit(self,node.value)
+        
+    def visit_Return(self,node):
+        if hasattr(node.value,'s'):
+            if len(node.value.s) > 1:
+                self.found=True
+                self.errorMessage='String literal longer than 1 found'
+    
+    def visit_Assign(self,node):
+        if hasattr(node.value,'s'):
+            if len(node.value.s) > 1:
+                self.found=True
+                self.errorMessage='String literal longer than 1 found'
+        else:
+            ast.NodeVisitor.visit(self,node.value)
+        
 def MyGrader(the_code):
     result='Incorrect'
     node=ast.parse(the_code)
@@ -60,7 +84,7 @@ def MyGrader(the_code):
             result='INCORRECT - '+(str)(sys.exc_info()[1])
             return result
     else:
-        result='VIOLATION'
+        result='ERROR - '+myVisitor.errorMessage
     return result
 
 def driver():
