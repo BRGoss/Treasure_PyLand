@@ -29,14 +29,12 @@ class MyVisitor(ast.NodeVisitor):
             self.errorMessage='multiple defs found'
             
     def visit_Call(self,node):
-        print(node.args)
         if hasattr(node.func,'value'):
             if hasattr(node.func.value,'s'):
-                if len(node.func.value.s) > 1:
-                    self.found=True
-                    self.errorMessage='String literal longer than 1 found'
+                ast.NodeVisitor.visit(self,node.func.value)
             else:
-                ast.NodeVisitor.visit(self,node.args[0])
+                for item in range(len(node.args)):
+                    ast.NodeVisitor.visit(self,node.args[item])
         elif hasattr(node.func,'id'):
             if node.func.id in ('open','compile','exec','eval'):
                 self.found=True
@@ -49,39 +47,34 @@ class MyVisitor(ast.NodeVisitor):
                         pass
            
     def visit_Expr(self,node):
-        if hasattr(node.value,'s'):
-            if len(node.value.s) > 1:
-                self.found=True
-                self.errorMessage='String literal longer than 1 found'
-        else:
-            ast.NodeVisitor.visit(self,node.value)
+        ast.NodeVisitor.visit(self,node.value)
         
     def visit_Return(self,node):
-        if hasattr(node.value,'s'):
-            if len(node.value.s) > 1:
-                self.found=True
-                self.errorMessage='String literal longer than 1 found'
+        ast.NodeVisitor.visit(self,node.value)
     
     def visit_Assign(self,node):
-        if hasattr(node.value,'s'):
-            if len(node.value.s) > 1:
+        ast.NodeVisitor.visit(self,node.value)
+    
+    def visit_Str(self,node):
+        if len(node.s) > 1:
                 self.found=True
-                self.errorMessage='String literal longer than 1 found'
-        else:
-            ast.NodeVisitor.visit(self,node.value)
-        
-def MyGrader(the_code):
-    result='Incorrect'
-    node=ast.parse(the_code)
+                self.errorMessage='String literal longer than 1 found' 
+                
+                   
+def MyGrader(student_code,test_case):
+    result=''
+    node=ast.parse(student_code)
     myVisitor=MyVisitor()
     myVisitor.visit(node)
     if not myVisitor.found:
-        code = compile(the_code, '', 'exec')
+        code = compile(student_code, '', 'exec')
         try:
-            exec(code)
+            theCode=student_code+"\n"+test_case
+            fullCode=compile(theCode,'','exec')
+            exec(fullCode)
             result=locals()['studentAnswer']
         except:
-            result='INCORRECT - '+(str)(sys.exc_info()[1])
+            result='INCORRECT - '+str(sys.exc_info()[1])
             return result
     else:
         result='ERROR - '+myVisitor.errorMessage
@@ -109,8 +102,6 @@ def driver():
         theDef=theArguments[0]
         theDef=theDef.split()[1]
         theDef=theDef.split('(')[0]
-    test_case = 'studentAnswer='+theDef+'('+args.test_case+')'
-    theCode=student_code+"\n"+test_case
     global debug
     if debug:
         print(theCode)
@@ -119,9 +110,7 @@ def driver():
     except:
         test_code=args.test_case
     test_case = 'studentAnswer='+theDef+'('+test_code+')'
-    theCode=student_code+test_case
-    #print(theCode)
 
-    return MyGrader(theCode)
+    return MyGrader(student_code,test_case)
     
 print(driver())
