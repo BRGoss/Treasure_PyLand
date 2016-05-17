@@ -1,0 +1,25 @@
+.admin_navigation {
+	ul {
+		margin-bottom: 0px;
+		display: flex;
+		flex-flow: wrap;
+		justify-content: space-around;
+	}
+
+	li {
+		padding: 5px;
+		vertical-align: middle;
+		font-size: 200%;
+		text-align: center;
+		list-style: none;
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-around;
+
+	}
+
+	a {
+		font-weight: bold;
+		text-decoration: none;
+	}
+}

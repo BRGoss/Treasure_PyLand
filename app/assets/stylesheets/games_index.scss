@@ -1,0 +1,53 @@
+.welcomepage{
+    width:auto;
+    height: 160px;
+    background: image-url("logoandwelcome.png") no-repeat;
+    background-position: center;
+      }
+
+#container_index{
+  background: image-url("background.jpg") no-repeat;
+    background-position: center;
+    width:auto;
+    height:700px;
+
+    /* it helps to push the paragraph in "about" menu to the center or the middle or wherever we want it to be
+     by changing the value of padding */
+   
+    /** border-top:3px solid #A6A616;     the border of the top top of the page */
+  }
+
+
+.marque1{
+  float:left;
+  overflow:hidden;
+  border-radius: 25px;
+    margin-left:150px;
+  margin-top:150px;
+}
+
+.content{
+  float:center;
+  overflow:hidden;
+  border-radius: 400px;
+  width:400px;
+  margin-top:450px;
+  margin-left:200px;
+    margin-right:450px;
+
+  
+  }
+
+.marque2{
+  float:right;
+  overflow:hidden;
+  border-radius: 25px;
+    margin-top:550px; 
+            margin-right:150px;
+
+  
+}
+
+.stop{
+  width:200px;
+  }

@@ -3,6 +3,10 @@
 		<li><%= link_to "Home", root_path %></li>
 		<li><%= link_to "Instructions", instructions_games_path %></li>
 		<li><%= link_to "About", about_games_path %></li>
+		<% if current_page?('/') %>
+		<li id="restart_game"><%= link_to "&#9760 Start Game &#9760".html_safe, restart_game_games_path %></li>
+		<% else %>
 		<li id="restart_game"><%= link_to "&#9760 Restart Game &#9760".html_safe , restart_game_games_path %></li>
+		<% end %>
 	</ul>
 </nav>

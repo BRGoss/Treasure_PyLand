@@ -16,7 +16,8 @@ end
 
 story = Storyboard.create!(title: 'Alpha Board',
 				   		   description: 'Initial board',
-				   		   default: true)
+				   		   default: true,
+				   		   debug_mode: true)
 
 #Scene.update_all(frame_id: story[:id])
 

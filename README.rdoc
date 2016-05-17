@@ -1,28 +1,5 @@
-== README
+This project was not meant to be deployed on its own, but integrated into Dr. Archer's existing webpages.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+However, if a live demonstration is necessary, you would need two things for simplicity: a github account, and a heroku account.  Once these are setup (you will need to follow current instructions as these can change), you would push the project to github and then issue the command to migrate it over to heroku.  You would also need to issue a rake command similar to "heroku rake db:setup" in order to setup the database based off the seed files included so existing data is in place.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Again, as heroku has changed a few times on how it does things, it is best to review current instructions when needing to push this to live environment.

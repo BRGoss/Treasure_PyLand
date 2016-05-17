@@ -1,12 +1,10 @@
-<div id="outside-border">
-<div class="Wrapper">
-	<%= render "game_nav" %>
 	<div id="Story">
 	<section id="Transcript" class="col">
 		<%= @story.scene.transcript %>
 	</section>
 
 	<section id="Visual" class="col">
+	<canvas id="canvas"></cnvas>
 		<%= @story.scene.visual.html_safe %>
 	</section>
 	</div>
@@ -22,18 +20,16 @@
 		<section id="Input">
 			<%= simple_form_for @game, url: test_code_games_path, remote: true do |f| %>
 				<% if @debug %>
-					<%= f.input :code, input_html: {value: @story.puzzle.solution} %>
+					<%= f.input :code, input_html: {value: @story.puzzle.solution, autocomplete: :off} %>
 				<% else %>
 					<%= f.input :code%>
 				<% end %>
-				<%= hidden_field_tag :parameter_id, @para.id %>
+				<%= hidden_field_tag :parameter_id, @para.id, autocomplete: :off %>
 				<div class="button_alignment">
 				<%= f.submit "Test Code", id: "test_code" %>
 				</div>
 			<% end %>
 		</section>
-	</div>
-</div>
 
 <section id="Result_Box">
 	<div id="Test_Success">
@@ -48,8 +44,9 @@
 
 	<div id="Test_Failure">
 		<p id="Failure">Sorry, but that is incorrect</p>
+		<p id="Errors"></p>
 		<div class="button_alignment">
-		<button id="Try_Again">Try Again
+		<button id="Try_Again">Try Again</button>
 		</div>
 	</div>
 </section>
@@ -69,12 +66,5 @@
 		</section> -->
 
 </div>
-<script>
-$(function(){ // If you are not familiar with jQuery, this will run when the page is loaded and ready
-  $('#Try_Again').click(function(){
-    $('#Test_Failure').hide(); 
-    $('#Result_Box').hide();
-  });
-});
-</script>
+
 

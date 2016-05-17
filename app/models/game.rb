@@ -1,6 +1,6 @@
 class Game < ActiveRecord::Base
 
-	def self.testing_code(code, arg)
+	def self.testing_code(code, arg, debug)
 		#return true
 		#return %x{python3 Paul/graderPaul.py app/models/testcode.txt "'hELLO_worLD'" }
 		filename = random_string
@@ -8,9 +8,9 @@ class Game < ActiveRecord::Base
 			f.puts("#{code}")
 			f.close
 		end
-#		output = `/app/.heroku/python/bin/python /app/Paul/graderPaul.py`
+		
 		value = %x{python Paul/graderPaul.py app/student_code/#{filename} '#{arg}' }
-#		puts "Value = " + value
+		if debug then puts "Value = " + value end
 		return value
 	end
 

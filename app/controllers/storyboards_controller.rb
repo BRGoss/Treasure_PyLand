@@ -52,7 +52,7 @@ class StoryboardsController < ApplicationController
 	private
 
 	def storyboard_params
-		params.require(:storyboard).permit(:title, :description, :default)
+		params.require(:storyboard).permit(:title, :description, :default, :debug_mode)
 	end
 
 	def set_storyboard

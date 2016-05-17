@@ -11,6 +11,15 @@
 	<% @storyboards.each do |storyboard| %>
 		<h2><%= link_to storyboard.title, storyboard %></h2>
 		<p><%= storyboard.description %></p>
-		<p><%= storyboard.default %></p>
+		<% if storyboard.default %>
+			<p>Default Storyboard</p>
+		<% end %>
+		<p>Debug Mode: 
+		<% if storyboard.debug_mode %>
+			On
+		<% else %>
+			Off
+		<% end %>
+
 	<% end %>
 </div>
