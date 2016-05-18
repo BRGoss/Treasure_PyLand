@@ -1,2 +1,0 @@
-def titleCase(theString):
-	return theString.title()
