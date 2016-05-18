@@ -4,7 +4,7 @@
 		<li><%= link_to "Instructions", instructions_games_path, target: "blank" %></li>
 		<li><%= link_to "Admin", storyboards_path %></li>
 		<% if current_page?('/') %>
-		<li id="restart_game"><%= link_to "&#9760 Start Game &#9760".html_safe, restart_game_games_path %></li>
+		<li class="game_link_btn_red"><%= link_to "&#9760 Start Game &#9760".html_safe, restart_game_games_path %></li>
 		<% else %>
 		<li class="game_link_btn_red"><%= link_to "&#9760 Restart Game &#9760".html_safe , restart_game_games_path %></li>
 		<% end %>
