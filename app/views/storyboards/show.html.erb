@@ -15,7 +15,17 @@
 </header>
 
 <p><%= @storyboard.description %></p>
-<p><%= @storyboard.default %></p>
+<p>
+	<% if @storyboard.default %>
+		This is the default Storyboard
+	<% end %>
+</p>
+<p>
+	<% if @storyboard.debug_mode %>
+		Debug mode is turned on
+	<% else %>
+		Debug mode is turned off
+	<% end %>
 
 <header>
 	<h2>Frames</h2>
@@ -28,8 +38,6 @@
 
 <ul id="frames">
 	<% @storyboard.frames.each do |frame| %>
-		<li><%= frame.frame_order %> - <%= frame.scene.title %> - <%= frame.puzzle.name %> - <%= link_to frame.id, [@storyboard, frame] %></li>
-		<li><%= link_to "Edit Frame", [:edit, @storyboard, @frame],
-			class: "edit" %></li>
+		<li><%= link_to "#{frame.frame_order} - #{frame.scene.title} - #{frame.puzzle.name}", [@storyboard, frame] %></li>
 <% end %>
 </ul>

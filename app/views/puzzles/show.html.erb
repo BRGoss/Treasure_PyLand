@@ -15,7 +15,7 @@
 
 <p><%= @puzzle.description %></p>
 <p><%= @puzzle.contract %></p>
-<p><%= @puzzle.solution %></p>
+<pre><%= simple_format @puzzle.solution.html_safe %></pre>
 
 <header>
 	<h2>Parameters</h2>

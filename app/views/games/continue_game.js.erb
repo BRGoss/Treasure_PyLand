@@ -5,6 +5,9 @@ $('#frame_order').val("<%= @story.frame_order %>");
 $('#Parameter').html("<%=j @para.input %>");
 $('#Result_Box').hide('slow');
 $('#Test_Success').hide('slow');
+setTimeout(function(){
+  $('#Success').html("<%= @success %>!!!");
+}, 2000);
 <% if @debug %>
 	$('#game_code').val("<%=j @story.puzzle.solution.html_safe %>");
 <% else %>

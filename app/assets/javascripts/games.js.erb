@@ -1,15 +1,18 @@
-$(function(){ // If you are not familiar with jQuery, this will run when the page is loaded and ready
-  $('#Try_Again').click(function(){
-  	$('#Errors').val('');
-    $('#Test_Failure').hide('slow'); 
-    $('#Result_Box').hide('slow');
-  });
-});
 
 $(document).ready(function() {
-var imagePaths = ["treasureislandtitle.png","treasureislandboat.png",
-                  "treasureislan2.png","scaleton.png","piratebox.png","map.png","sphere.png"];
-                  //"treasureisland.png"
+  $('#Try_Again').click(function(event){
+    $('#Errors').val('');
+    $('#Test_Failure').hide('slow'); 
+    $('#Result_Box').hide('slow');
+  })
+var imagePaths = [
+  '<%= asset_path 'treasureislandtitle.png' %>',
+  '<%= asset_path 'treasureislandboat.png' %>',
+  '<%= asset_path 'treasureislan2.png' %>',
+  '<%= asset_path 'scaleton.png' %>',
+  '<%= asset_path 'piratebox.png' %>',
+  '<%= asset_path 'map.png' %>'];
+
 
 var canvas  = document.querySelector('canvas'),
     context  = canvas.getContext('2d'),
@@ -22,7 +25,7 @@ imagePaths.forEach(function(path){
   }
   // Simulate really slow loading of images
   setTimeout(function(){
-    picture.src = "/assets/images/" + path;
+    picture.src = path;
   },Math.random()*10000);
 });
 

@@ -4,8 +4,7 @@
 	</section>
 
 	<section id="Visual" class="col">
-	<canvas id="canvas"></cnvas>
-		<%= @story.scene.visual.html_safe %>
+		<canvas id="canvas"></canvas>
 	</section>
 	</div>
 
@@ -14,7 +13,7 @@
 			<%= @story.puzzle.contract %>
 		</section>
 		<section id="Parameter_Section">
-			Your Input: <span id="Parameter"> <%= @para.input %></span>
+			Your Parameter/s: <span id="Parameter"> <%= @para.input %></span>
 		</section>
 
 		<section id="Input">
@@ -25,19 +24,19 @@
 					<%= f.input :code%>
 				<% end %>
 				<%= hidden_field_tag :parameter_id, @para.id, autocomplete: :off %>
-				<div class="button_alignment">
-				<%= f.submit "Test Code", id: "test_code" %>
+				<div class="btn_center_align">
+				<%= f.submit "Test Code", class: "game_btn_green" %>
 				</div>
 			<% end %>
 		</section>
 
 <section id="Result_Box">
 	<div id="Test_Success">
-		<p id="Success">Congratulations!</p>
+		<p id="Success"><%= @success %>!!!</p>
 		<%= simple_form_for @game, url: continue_game_games_path, remote: true do |f| %>
 			<%= hidden_field_tag :frame_order, @story.frame_order, :autocomplete => :off %>
-			<div class="button_alignment">
-			<%= f.submit "Continue", id: "Continue" %>
+			<div class="btn_center_align">
+			<%= f.submit "Continue", class: "game_btn_green" %>
 			</div>
 		<% end %>
 	</div>
@@ -45,8 +44,10 @@
 	<div id="Test_Failure">
 		<p id="Failure">Sorry, but that is incorrect</p>
 		<p id="Errors"></p>
-		<div class="button_alignment">
-		<button id="Try_Again">Try Again</button>
+		<div class="btn_center_align">
+		<div class="game_link_btn_red">
+		<%= link_to "Try Again", 'javascript:;',  id: "Try_Again" %>
+		</div>
 		</div>
 	</div>
 </section>

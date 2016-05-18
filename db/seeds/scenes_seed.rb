@@ -22,6 +22,8 @@ chance would you happen to know a bit of programming?  I sure could
 use the help.
 TRANSCRIPT
 
+
+
 scene["title2"] = "Getting the Chest"
 
 scene["desc2"] = "You've gotten a rather odd form of payment"
@@ -38,17 +40,19 @@ shop owner that you don't need a chest, he shrugs you off and continues
 that!  Why think of all the rum it must be able to hold!  Now, if 
 you don't have any money to spend, I must ask you to leave with that 
 rather unsightly chest you've brought in as I am not buying anything 
-at the moment, and take that monkey with you!"\n
-	Arriving back 
-at your dorm with a new old sea chest and an ape in tow, you try 
-to open it (the chest, not the chimp!).  Drat, it's locked!  You 
-look to the chimp  in hopes he might know something about the 
-chest.  He's not even paying attention, instead he's making a rather 
-rude gesture to himself in the mirror.  Double drat, the chimp's an 
-idiot!  It's up to you to get this chest open.  You notice some 
-scribbles above what seems to be a combination lock.  Perhaps a 
+at the moment, and take that monkey with you!"
+
+	Arriving back at your dorm with a new old sea chest and an ape 
+in tow, you try to open it (the chest, not the chimp!).  Drat, 
+it's locked!  You look to the chimp  in hopes he might know something 
+about the chest.  He's not even paying attention, instead he's making 
+a rather rude gesture to himself in the mirror.  Double drat, the 
+chimp's an idiot!  It's up to you to get this chest open.  You notice 
+some scribbles above what seems to be a combination lock.  Perhaps a 
 little code fu may be in order.
 TRANSCRIPT
+
+
 
 scene["title3"] = "Opening the Chest"
 
@@ -57,14 +61,14 @@ scene["desc3"] = "Amidst the junk, something catches your interest"
 scene["visual3"] = "&#9760"
 
 scene["script3"] = <<TRANSCRIPT
-"Success!  As the lid opens, you receive a rather strong slap on 
+	"Success!  As the lid opens, you receive a rather strong slap on 
 the back by your new roommate, the chimp with no name.  That 
 stung rather fiercely, but luckily enough the impact has caused 
 you to lurch far enough into the chest giving you a new angle 
 in which to view the inside of the chest.  You spot a rather 
 curious seam, and upon a bit of force and a screwdriver, you 
 manage to pry it open.  Inside you find an odd assortment of 
-items including some old letters, a 5 1/4\" floppy disk, a 
+items including some old letters, a 5 1/4" floppy disk, a 
 rubber mallet, and an old oil cloth.  The chimp immediately 
 grabs the mallet and hits you upside the head with it!  Ouch!  
 The chimp smiles back at you as you give him you best, most 
@@ -84,6 +88,8 @@ some sort of code, and with a bit of programming wizardry,
 you might just be able to crack it!
 TRANSCRIPT
 
+
+
 scene["title4"] = "Meeting the Good Professor"
 
 scene["desc4"] = "The Eccentricity Just Went to 11"
@@ -91,26 +97,26 @@ scene["desc4"] = "The Eccentricity Just Went to 11"
 scene["visual4"] = "&#9760"
 
 scene["script4"] = <<TRANSCRIPT
-Upon arriviing at the university, a secretary is nice enough to show you to
+	Upon arriviing at the university, a secretary is nice enough to show you to
 Monty's office.  He's not in, but she tells you he should be finished with
 his class soon, and that you can wait inside.  You seat yourself, and looking
 around he can tell that Monty is quite eccentric.  He has a stuff rabbit
 with fangs, a case that reads "Holy Hand Grenade", a picture of himself followed
 by the words "... and the Meaning of Life", and what seems to be a dead parrot.
 
-"And now for something completely different! Some monkey is in my office, and
+	"And now for something completely different! Some monkey is in my office, and
 he's brought his chimp with him!"  Monty seems to have snuck up on you, and is
 not pleased to find you in his office it seems.  Afraid he may kick you out, you
 rather rapidly tell him what brought you to his office.
 
-"A map you say?  From a chest?  With floppy disks?  The former two interest me 
+	"A map you say?  From a chest?  With floppy disks?  The former two interest me 
 but that last one sounds like a personal problem!  May I see the map?"  You 
 lay the map on his desk, and he leans forward to examine it more closely.  
 "You were right to bring this to me, though I'm unsure who would have left
 that note, but I am perhaps the most reknowned programmer of Python the 
-world has ever seen!"  
+world has ever seen!"
 
-He sits a few more minutes in silence studying the map.  Looking up, he seems
+	He sits a few more minutes in silence studying the map.  Looking up, he seems
 somewhat perpelexed.  "Well, this is rather embarrassing, but I don't have a 
 clue other than I can tell we'll need a boat.  A boat of which you'll need to
 provide, provided of course that you can figure out this bit here..." as he
@@ -119,6 +125,8 @@ can solve this bit, then we may have quite the adventure ahead of us!  But
 first things first, solve this, and then get us a boat!"
 TRANSCRIPT
 
+
+
 scene["title5"] = "Meeting Long John Slither"
 
 scene["desc5"] = "You get a boat and a different kind of cook"
@@ -126,14 +134,14 @@ scene["desc5"] = "You get a boat and a different kind of cook"
 scene["visual5"] = "&#9760"
 
 scene["script5"] = <<TRANSCRIPT
-Arriving at the docks, you begin your search for a ship to take you on your
+	Arriving at the docks, you begin your search for a ship to take you on your
 voyage.  Unfortunately none of the ships that are for hire suit your needs,
 or the crews just plain scare you off.  How did that Gilligan fellow even
 become a first mate being that much of a clutz, and was that a patched
 hold in their ship?  And the Love Boat?  That's NOT what you need for this
-trip, but maybe for Spring Break.  
+trip, but maybe for Spring Break.
 
-After a long day of unsuccessful searching, you find yourself in a small,
+	After a long day of unsuccessful searching, you find yourself in a small,
 smoke-filled restaurant.  Upon sitting at a small table to the side, the
 owner comes over to your table.  "Let me introduce myself to ye mate, I 
 be Long John Slither.  I hear ye be looking for a ship.  I've got an old
@@ -144,6 +152,8 @@ if ye can help me out with a small problem I be having here, you'll have your
 ship free of charge!"
 TRANSCRIPT
 
+
+
 scene["title6"] = "Bon Voyage!"
 
 scene["desc6"] = "And the adventure begins"
@@ -151,18 +161,20 @@ scene["desc6"] = "And the adventure begins"
 scene["visual6"] = "&#9760"
 
 scene["script6"] = <<TRANSCRIPT
-A few days later you and your crew have set sail and are now out on the open sea.
+	A few days later you and your crew have set sail and are now out on the open sea.
 "Who hired that snake for a cook?"  Monty's rhetorical question heralds his
 arrival at the door to your quarters.  Letting him in, he continues "Do you know
 what that reptile cooked for lunch?  His own shedding and he has the nerve to 
 call it stew!  What's for dinner, roach chili?  We best find this island of 
-yours soon before we die from starvation or food poisoning!"  
+yours soon before we die from starvation or food poisoning!"
 
-As you both sit down at the nearby table, you bring a lamp closer to better
+	As you both sit down at the nearby table, you bring a lamp closer to better
 illuminate the map laying across it.  "Well, we've followed the easy clues
 on the map, but looks like the last one is a bit tricky.  You'd best break
 out that laptop of yours and get to work!"
 TRANSCRIPT
+
+
 
 scene["title7"] = "Avast, Land Ho!"
 
@@ -171,26 +183,29 @@ scene["desc7"] = "The island looms, and so does foul treachery"
 scene["visual7"] = "&#9760"
 
 scene["script7"] = <<TRANSCRIPT
-"Land!  Thank God and his son Brian! Hopefully there's food here that's 
+	"Land!  Thank God and his son Brian! Hopefully there's food here that's 
 not snake swill or rat meat!" As Monty is about to leap over the edge of 
 the boat to run to find something edible on the island, he's met with a 
 sword at his throat!
 
-"What do ye mean calling me cooking swill?  And rats be my delicacy! If 
+	"What do ye mean calling me cooking swill?  And rats be my delicacy! If 
 me and me mates weren't about to turn on ye anyway, that insult would have
 sealed your fate!"  Pyrates!  Long John Slither and his crew are pyrates!
 
-"Take 'em below deck and lock 'em in the hold!  We may have need of 'em later!"
+	"Take 'em below deck and lock 'em in the hold!  We may have need of 'em later!"
 One of his crew takes the map from you as they lead you, Monty, and the chimp
-down to the hold and lock you inside.  
+down to the hold and lock you inside.
 
-"Well this is a fine mess you've gotten us into!  How do you expect to get us
+	"Well this is a fine mess you've gotten us into!  How do you expect to get us
 out of here without getting us killed?"  Monty is right, you've got to get out
-somehow!  Looking around the hold, you search for something.  Well, the chimp found a crate of bananas, and it looks like Monty's empty stomach is 
+somehow!  Looking around the hold, you search for something.  Well, the chimp 
+found a crate of bananas, and it looks like Monty's empty stomach is 
 provoking him to fight the monkey for those bananas.  This could get ugly fast!
 You examine the locked door a bit closer, and it seems there's a puzzle of sorts
 that might hold the key to unlocking it.  Time to see if you can crack it!
 TRANSCRIPT
+
+
 
 scene["title8"] = "Fight!"
 
@@ -199,12 +214,25 @@ scene["desc8"] = "You catch up to the pyrates..."
 scene["visual8"] = "&#9760"
 
 scene["script8"] = <<TRANSCRIPT
-If a group of pyrates wasn't easy enough to follow in the sand, the slither
-	trail of their leader is.  
+	If a group of pyrates wasn't easy enough to follow in the sand, the slither 
+trail of their leader is.  After several hours of following their trail, but 
+you finally catch up to the pyrates.  They seem to be arguing about something, 
+apparently they're having a disagreement on how to decipher part of the map.
 
-	*** This is still up in the air.  It depends on what we find/can do with
-	animation to determine what the trap is that is sprung on the pyrates.
+	"I've got a little something we can use.  I never leave the office without it!  
+Think you can sneak up close enough to give it a good toss?  Good!  My throwing 
+arm isn't what it used to be," says Monty as he hands you a package.  You look 
+down at the words "Holy Hand Grenade."  "The instructions are inside," he claims.  
+Upon further inspection you find a sheet of paper.  "Thou shalt count to one..." 
+
+	"No, no, those instructions are silly.  Look on the other side, and you'll find 
+a bit more easy to follow instructions.  Do what it says there, and give it a good 
+toss.  That should teach those pyrates to steal from us!"
+
+	Flipping over the piece of you paper you find the following instructions...
 TRANSCRIPT
+
+
 
 scene["title9"] = "Almost There"
 
@@ -213,21 +241,26 @@ scene["desc9"] = "You find yourselves close to the end of your journey"
 scene["visual9"] = "&#9760"
 
 scene["script9"] = <<TRANSCRIPT
-"... and that's for cooking my hat!"  Seemingly satisified with the pyrates'
-	fate, Monty catches up to you.  Luckily enough, it seems Slither and his crew
-	made some notes on the map that have assisted you in finding something quite 
-	odd.
+	"... and that's for cooking my hat!"  Seemingly satisified with the pyrates'
+fate, Monty catches up to you.  Luckily enough, it seems Slither and his crew
+made some notes on the map that have assisted you in finding something quite 
+odd.
 
 	You find yourselves standing in a cave with a skeleton, a bunch of electric
-	cables, and an old power generator.  You try the generator, and it seems to still have some power left in it.  A whirring of unseen machines begins to 
-	reverberate throughthe cave, however, you don't see any kind of useable device
-	aside from the generator as the cables disappear into the walls.  Upon closer inspection, you find a floppy disk drive inside the skeleton's mouth.  "Well
-	it's a good thing you brought those with you from several scenes back isn't it?" Monty is right, it is a good thing you kept those!  Inserting one into the 
-	skeleton's maw, you hear a sound, and can make out a very faint glow from one
-	of the walls.  As you sweep your hand across the wall, you find a monitor that
-	was inbedded there all along, just covered in inches of dust.  On the monitor
-	is what is hopefully the last puzzle of this trip
+cables, and an old power generator.  You try the generator, and it seems to 
+still have some power left in it.  A whirring of unseen machines begins to 
+reverberate throughthe cave, however, you don't see any kind of useable device
+aside from the generator as the cables disappear into the walls.  Upon closer 
+inspection, you find a floppy disk drive inside the skeleton's mouth.  "Well
+it's a good thing you brought those with you from several scenes back isn't 
+it?" Monty is right, it is a good thing you kept those!  Inserting one into the 
+skeleton's maw, you hear a sound, and can make out a very faint glow from one
+of the walls.  As you sweep your hand across the wall, you find a monitor that
+was inbedded there all along, just covered in inches of dust.  On the monitor
+is what is hopefully the last puzzle of this trip
 TRANSCRIPT
+
+
 
 scene["title10"] = "At Last, the Last"
 
@@ -236,15 +269,17 @@ scene["desc10"] = "At last, you find the treasure, only one thing remains..."
 scene["visual10"] = "&#9760"
 
 scene["script10"] = <<TRANSCRIPT
-A door slides open, revealing a second chamber.  This one however is home to a
-	very large, gold plated chest in the center of the room.  "Well it's about
-	bloody time!  Now as long as this doesn't melt our faces when we open it, I 
-	think we can call this a rather excellent adventure!"  Hopefully this isn't 
-	the Ark, but just in case, it might be best to be careful!  Aside the chest,
-	the room is rather unremarkable.  No gold, no coins, no gems, nothing that
-	would indicate any vast wealth except for what may lie in the chest.  
-	Examining the chest...another puzzle!  What could it mean?
+	A door slides open, revealing a second chamber.  This one however is home to a
+very large, gold plated chest in the center of the room.  "Well it's about
+bloody time!  Now as long as this doesn't melt our faces when we open it, I 
+think we can call this a rather excellent adventure!"  Hopefully this isn't 
+the Ark, but just in case, it might be best to be careful!  Aside the chest,
+the room is rather unremarkable.  No gold, no coins, no gems, nothing that
+would indicate any vast wealth except for what may lie in the chest.  
+Examining the chest...another puzzle!  What could it mean?
 TRANSCRIPT
+
+
 
 Scene.delete_all
 

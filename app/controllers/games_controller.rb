@@ -5,8 +5,10 @@ class GamesController < ApplicationController
 	before_action :test_params, only: [:test_code]
 	before_action :continue_params, only: [:continue_game]
 	before_action :set_debug, only: [:start_game, :test_code, :continue_game, :restart_game]
+	before_action :get_success_message, only: [:start_game, :continue_game, :restart_game]
 
 	def start_game
+
 #		byebug
 		# if session is nil, then start game fresh, otherwise
 		# set puzzle back to first puzzle/scene
@@ -88,6 +90,12 @@ class GamesController < ApplicationController
 		else
 			result.partition('INCORRECT - ').last
 		end
+	end
+
+	def get_success_message
+		messages = ["Excelsior", "Success", "Fantastic", "Great",
+					"Congratulations", "Excellent", "Stupendous"]
+		@success = messages.sample
 	end
 
 end

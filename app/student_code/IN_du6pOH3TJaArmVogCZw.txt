@@ -1,0 +1,8 @@
+def remove_wrong_words(words, doNotInclude):
+	searchList = words.split()
+	keepList = list()
+	for index in range(len(searchList)):
+		if(doNotInclude not in searchList[index]):
+			keepList.append(searchList[index])
+	answer = ' '.join(keepList)
+	return answer"

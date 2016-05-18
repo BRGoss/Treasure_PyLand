@@ -1,0 +1,3 @@
+def find(toLookIn, toFind):
+	index = toLookIn.find(toFind)
+	return toLookIn[index:index + len(toFind)]
